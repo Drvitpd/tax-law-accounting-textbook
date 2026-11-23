@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แอปบทที่ 2 กฎหมายและองค์กรที่กำกับการบัญชีไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ok:#1f9d55;--warn:#d4a017;--bad:#d64545;--ink:#1d2433;--quiet:#5b6577;--line:#d9dde5;--bg:#fff8f3;--card:#fff;--accent:#F26B21;--accent-soft:#fde8dc;--brand:#1C2230}
+*{box-sizing:border-box}
+body{margin:0;font-family:Sarabun,system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55}
+header{background:#fff;color:var(--brand);padding:14px 20px;border-bottom:5px solid var(--accent);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.logo{height:38px;width:auto}.tax{background:var(--accent);color:#fff;font-weight:700;letter-spacing:3px;padding:4px 12px;border-radius:6px;font-size:18px}.htxt{flex:1 1 260px}
+header h1{margin:0;font-size:19px;font-weight:700}header p{margin:2px 0 0;font-size:13px;color:var(--quiet)}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}nav button:hover{border-color:var(--accent)}
+main{max-width:860px;margin:0 auto;padding:18px 14px 60px}
+section{display:none}section.on{display:block}
+h2{font-size:20px;margin:6px 0 4px;color:var(--accent)}
+.lead{color:var(--quiet);margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent-soft);border-radius:12px;padding:14px 16px;margin:10px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);color:var(--quiet)}
+.tag.ok{border-color:var(--ok);color:var(--ok)}.tag.wait{border-color:var(--warn);color:#9a7408}.tag.bad{border-color:var(--bad);color:var(--bad)}
+.fb{margin-top:8px;padding:8px 10px;border-radius:8px;font-size:14px;display:none}
+.fb.good{display:block;background:#e7f6ec;color:#155d35}.fb.bad{display:block;background:#fbe9e9;color:#8a2626}.fb.info{display:block;background:#fff4e6;color:#7a4a0c}
+.progress{height:8px;background:var(--line);border-radius:4px;overflow:hidden}.progress div{height:100%;background:var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.abbr td:first-child{font-weight:700;white-space:nowrap;color:var(--accent)}
+label.f{display:block;margin:6px 0 2px;font-size:14px;color:var(--quiet)}
+input[type=number]{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;font:inherit;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.flash{min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:20px;cursor:pointer;user-select:none}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.right{background:#e7f6ec;border-color:var(--ok)}.opt.wrong{background:#fbe9e9;border-color:var(--bad)}
+small.q{color:var(--quiet)}
+select{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;max-width:100%}
+</style>
+<style>header img.logo{height:52px;width:auto;max-width:100%}@media (max-width:480px){header img.logo{height:40px}}.atx-nav{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.9rem;margin:0 0 6px}.atx-nav a{color:var(--accent,#F26B21);font-weight:700;text-decoration:none}.atx-nav a:hover{text-decoration:underline}</style>
+<script src="gate.js"></script>
+</head>
+<body>
+<header><img class="logo" src="brand/logo.png" alt="Dr.VIT & PD | TaxBiz Clear"><div class="htxt"><h1>แอปประจำบทที่ 2 · กฎหมายและองค์กรที่กำกับการบัญชีไทย</h1><p>ตำรา การบัญชีสำหรับนักกฎหมายภาษีอากร · สถานะกฎหมาย ณ 23 พ.ย. 2569 · ตัวเลขในแอปเป็นตัวอย่างสมมติ</p></div></header>
+<nav id="nav"></nav>
+<main>
+<div class="atx-nav" role="navigation" aria-label="นำทาง"><a href="./">สารบัญแอปประจำเล่ม</a> · <a href="ch01.html">บทที่ 1</a></div>
+<section id="home">
+ <h2>เริ่มต้น</h2><p class="lead">ทำครบหกกิจกรรมแล้วจะรู้ว่าใครออกกฎ ใครต้องทำบัญชี ใครรับรองงบ และกำไรส่วนใดจ่ายเงินปันผลได้</p>
+ <div class="card"><b>ความคืบหน้า</b><div class="progress" style="margin-top:8px"><div id="prog" style="width:0"></div></div><small class="q" id="progtxt"></small></div>
+ <div class="card"><b>ผลลัพธ์การเรียนรู้ (Learning Outcomes: LO)</b><ol style="margin:6px 0 0 18px;padding:0">
+  <li>LO2.1 อธิบายองค์กรและฐานกฎหมายที่กำกับการบัญชีไทย (เข้าใจ)</li>
+  <li>LO2.2 จำแนกหน้าที่ของผู้มีหน้าที่จัดทำบัญชี ผู้ทำบัญชี และผู้สอบบัญชี และผลเมื่อฝ่าฝืน (ประยุกต์ใช้)</li>
+  <li>LO2.3 คำนวณทุนสำรอง กำไรที่จ่ายปันผลได้ และผลภาษีของปันผลจากกำไรมูลค่ายุติธรรม (ประยุกต์ใช้)</li>
+  <li>LO2.4 วิเคราะห์คำพิพากษาและข้อหารือเรื่องส่วนล้ำมูลค่าหุ้นและเงินปันผลด้วยกรอบ ตาม–ตรึง–แยก (วิเคราะห์)</li>
+  <li>LO2.5 ประเมินสถานะทางกฎหมายของมาตรฐานการบัญชีและข้อเสนอแก้กฎหมายกำไรที่จ่ายได้ (ประเมินค่า)</li></ol></div>
+ <div class="card"><b>คำย่อที่ใช้ในแอป</b><table class="abbr">
+<tr><td>DBD</td><td>กรมพัฒนาธุรกิจการค้า (Department of Business Development)</td></tr>
+<tr><td>TFAC</td><td>สภาวิชาชีพบัญชี ในพระบรมราชูปถัมภ์ (Federation of Accounting Professions)</td></tr>
+<tr><td>กกบ.</td><td>คณะกรรมการกำกับดูแลการประกอบวิชาชีพบัญชี (Oversight Board of Accounting Professions)</td></tr>
+<tr><td>ก.ล.ต.</td><td>สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์ (Securities and Exchange Commission)</td></tr>
+<tr><td>CPA</td><td>ผู้สอบบัญชีรับอนุญาต (Certified Public Accountant)</td></tr>
+<tr><td>TA</td><td>ผู้สอบบัญชีภาษีอากร (Tax Auditor) ตามประมวลรัษฎากร มาตรา 3 สัตต</td></tr>
+<tr><td>TFRS</td><td>มาตรฐานการรายงานทางการเงิน (Thai Financial Reporting Standards)</td></tr><tr><td>Full TFRS</td><td>มาตรฐานการรายงานทางการเงิน ฉบับสมบูรณ์ (Full Thai Financial Reporting Standards) ชุดที่ใช้กับกิจการที่มีส่วนได้เสียสาธารณะ</td></tr>
+<tr><td>TFRS for NPAEs</td><td>มาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียสาธารณะ (Non-Publicly Accountable Entities)</td></tr>
+<tr><td>CPD</td><td>การพัฒนาความรู้ต่อเนื่องทางวิชาชีพ (Continuing Professional Development)</td></tr>
+<tr><td>IRAC</td><td>ประเด็น–หลักกฎหมาย–ปรับใช้–สรุป (Issue–Rule–Application–Conclusion)</td></tr>
+<tr><td>ป.พ.พ.</td><td>ประมวลกฎหมายแพ่งและพาณิชย์</td></tr>
+<tr><td>ท.ป.</td><td>คำสั่งกรมสรรพากรที่ออกโดยอาศัยอำนาจตามตัวบท</td></tr>
+<tr><td>กค</td><td>รหัสกระทรวงการคลังในเลขที่หนังสือตอบข้อหารือ</td></tr>
+<tr><td>ภ.ง.ด.50</td><td>แบบแสดงรายการภาษีเงินได้นิติบุคคล</td></tr>
+</table></div>
+</section>
+
+<section id="org"><h2>1. ใครทำหน้าที่อะไร</h2><p class="lead">เลือกองค์กรหรือบุคคลที่ทำหน้าที่ในแต่ละข้อ ระบบจะบอกฐานกฎหมายทันที</p><div id="orgList"></div><div class="card" id="orgScore"></div></section>
+
+<section id="reserve"><h2>2. ทุนสำรองและกำไรที่จ่ายเงินปันผลได้</h2><p class="lead">ค่าเริ่มต้นคือภูผาแลนด์ในตัวอย่าง 2.1–2.2 ปรับตัวเลขเพื่อทดลองกรณีอื่น ตัวอย่างตัดภาษีเงินได้รอการตัดบัญชี (Deferred Tax) ออกเพื่อความง่าย ถ้ารับรู้ ภูผาแลนด์จะจ่ายได้ 3,800,000 บาท (ดูหัวข้อ 2.6 และบทที่ 12) และสมมติว่าบริษัทแม่ถือหุ้นอย่างน้อยร้อยละ 25 นานพอจึงยกเว้นเต็มตามมาตรา 65 ทวิ (10)</p>
+ <div class="card"><div class="row" style="margin-bottom:8px"><button class="btn primary" id="tCo">บริษัทจำกัด (ป.พ.พ. 1202)</button><button class="btn" id="tPcl">บริษัทมหาชนจำกัด (มาตรา 116)</button></div>
+ <div class="grid">
+  <div><label class="f">ทุน / ทุนจดทะเบียน (บาท)</label><input type="number" id="iCap" value="20000000"></div>
+  <div><label class="f">ทุนสำรองยกมา (บาท)</label><input type="number" id="iRes" value="1500000"></div>
+  <div><label class="f">กำไรก่อนภาษีตามงบ (บาท)</label><input type="number" id="iPbt" value="5000000"></div>
+  <div><label class="f">ในนั้นเป็นกำไรจากมูลค่ายุติธรรม (บาท)</label><input type="number" id="iFv" value="2000000"></div>
+  <div id="wLoss" style="display:none"><label class="f">ขาดทุนสะสมยกมา (บาท)</label><input type="number" id="iLoss" value="0"></div>
+ </div>
+ <div id="resOut" style="margin-top:12px"></div><div class="fb" id="resFb"></div></div></section>
+
+<section id="ta"><h2>3. ใครรับรองงบห้างหุ้นส่วน</h2><p class="lead">กฎกระทรวง พ.ศ. 2544 ยกเว้นห้างหุ้นส่วนจดทะเบียนขนาดเล็กที่ครบทั้งสามเกณฑ์ ค่าเริ่มต้นคือภูผาก่อสร้างในตัวอย่าง 2.5</p>
+ <div class="card"><div class="grid">
+  <div><label class="f">ทุน (บาท)</label><input type="number" id="hCap" value="4000000"></div>
+  <div><label class="f">สินทรัพย์รวม (บาท)</label><input type="number" id="hAs" value="25000000"></div>
+  <div><label class="f">รายได้รวม (บาท)</label><input type="number" id="hRev" value="31000000"></div>
+ </div><div id="taOut" style="margin-top:12px"></div></div></section>
+
+<section id="pen"><h2>4. กำหนดยื่นงบและผลเมื่อฝ่าฝืน</h2><p class="lead">สรุปจาก พ.ร.บ.การบัญชี พ.ศ. 2543 และ พ.ร.บ.ว่าด้วยการปรับเป็นพินัย พ.ศ. 2565 ป้ายสถานะบอกว่าตรวจกับต้นฉบับแล้วหรือยัง</p>
+ <div class="card"><b>มาตรา 11 กำหนดยื่นงบต่อ DBD</b><table>
+ <tr><th>ผู้มีหน้าที่จัดทำบัญชี</th><th>กำหนด</th></tr>
+ <tr><td>ห้างหุ้นส่วนจดทะเบียน นิติบุคคลต่างประเทศ กิจการร่วมค้าตามประมวลรัษฎากร</td><td>5 เดือนนับแต่วันปิดบัญชี</td></tr>
+ <tr><td>บริษัทจำกัด บริษัทมหาชนจำกัด</td><td>1 เดือนนับแต่วันที่ที่ประชุมผู้ถือหุ้นอนุมัติงบ</td></tr></table></div>
+ <div class="card"><b>โทษตาม พ.ร.บ.การบัญชี</b><table id="penTbl"></table><small class="q">ความผิดที่เคยมีโทษปรับสถานเดียวเปลี่ยนเป็นความผิดทางพินัยตั้งแต่ 25 ต.ค. 2566 ค่าปรับเป็นพินัยไม่ใช่โทษอาญาและไม่มีประวัติอาชญากรรม ส่วนความผิดที่มีโทษจำคุก เช่น ทำบัญชีให้ผิดความจริง ยังเป็นความผิดอาญา</small></div></section>
+
+<section id="cases"><h2>5. คดีและข้อหารือ</h2><p class="lead">แตะการ์ดเพื่อเปิดการวิเคราะห์แบบ IRAC และดูว่าภาษีวางท่า ตาม ตรึง หรือแยก</p><div id="caseList"></div></section>
+
+<section id="quiz"><h2>6. แบบทดสอบ 12 ข้อ</h2><p class="lead">ข้อเดียวกับปรนัยท้ายบท ตอบแล้วเห็นเหตุผลทันที สรุปคะแนนราย LO อยู่ท้ายสุด</p><div id="quizBox"></div><div class="card" id="quizSum"></div></section>
+
+<section id="cards"><h2>7. การ์ดศัพท์</h2><p class="lead">แตะการ์ดเพื่อพลิก กด "ยังจำไม่ได้" เพื่อให้คำนั้นกลับมาเร็วขึ้น</p>
+ <div class="card flash" id="flash"></div><div class="row"><button class="btn" id="fNo">ยังจำไม่ได้</button><button class="btn primary" id="fYes">จำได้แล้ว</button><small class="q" id="fCount"></small></div></section>
+</main>
+<script>
+const TABS=[["home","เริ่มต้น"],["org","ใครทำอะไร"],["reserve","ทุนสำรองและปันผล"],["ta","CPA หรือ TA"],["pen","กำหนดยื่นและโทษ"],["cases","คดีและข้อหารือ"],["quiz","แบบทดสอบ"],["cards","การ์ดศัพท์"]];
+const WHO=["สภาวิชาชีพบัญชี","กกบ.","DBD","ก.ล.ต.","กรมสรรพากร","ผู้ทำบัญชี","ผู้มีหน้าที่จัดทำบัญชี"];
+const ORG=[
+["กำหนดและปรับปรุงมาตรฐานการรายงานทางการเงิน",0,"พ.ร.บ.วิชาชีพบัญชี พ.ศ. 2547 มาตรา 34 ผ่านคณะกรรมการกำหนดมาตรฐานการบัญชี"],
+["ให้ความเห็นชอบมาตรฐานก่อนประกาศในราชกิจจานุเบกษา",1,"พ.ร.บ.วิชาชีพบัญชี พ.ศ. 2547 มาตรา 34 วรรคสาม"],
+["รับงบการเงิน และออกประกาศเรื่องรายการย่อในงบการเงินและคุณสมบัติผู้ทำบัญชี",2,"พ.ร.บ.การบัญชี พ.ศ. 2543 มาตรา 7 (6) ประกอบมาตรา 11 วรรคสาม และมาตรา 19"],
+["กำกับงบการเงินของบริษัทจดทะเบียนในตลาดหลักทรัพย์",3,"กฎหมายหลักทรัพย์ (เลขมาตรารอตรวจต้นฉบับ)"],
+["อนุญาตและกำกับผู้สอบบัญชีภาษีอากร",4,"ประมวลรัษฎากร มาตรา 3 สัตต และคำสั่ง ท.ป.98/2544, 122/2545, 123/2545"],
+["ทำบัญชีให้เป็นไปตามมาตรฐานการบัญชี",5,"พ.ร.บ.การบัญชี มาตรา 20"],
+["จัดให้มีผู้ทำบัญชีที่มีคุณสมบัติและควบคุมดูแล",6,"พ.ร.บ.การบัญชี มาตรา 19 วรรคหนึ่ง"],
+["เก็บรักษาบัญชีและเอกสารประกอบไม่น้อยกว่า 5 ปีนับแต่วันปิดบัญชี",6,"พ.ร.บ.การบัญชี มาตรา 14"]];
+const PEN=[["29","ฝ่าฝืนมาตรา 10, 12, 19 วรรคหนึ่ง","พินัยไม่เกิน 10,000 บาท","ok"],["30","ไม่ยื่นงบภายในกำหนดตามมาตรา 11 วรรคหนึ่ง","พินัยไม่เกิน 50,000 บาท","ok"],["31","ฝ่าฝืนมาตรา 11 วรรคสาม (รายการย่อในงบ), 13, 14, 17 (เก็บรักษาบัญชี), 15 (แจ้งบัญชีสูญหาย)","พินัยไม่เกิน 5,000 บาท","ok"],["32","งบไม่ผ่าน CPA ตามมาตรา 11 วรรคสี่","พินัยไม่เกิน 20,000 บาท","ok"],["33","แจ้งความเท็จเรื่องบัญชีหรือเอกสารสูญหาย","จำคุกไม่เกิน 6 เดือน หรือปรับไม่เกิน 10,000 บาท (อาญา)","ok"],["34","ผู้ทำบัญชีไม่ทำบัญชีตามมาตรา 20","พินัยไม่เกิน 10,000 บาท","ok"],["35","ผู้ทำบัญชีฝ่าฝืนมาตรา 21 (ลงรายการเป็นภาษาไทย ด้วยหมึกหรือพิมพ์)","พินัยไม่เกิน 5,000 บาท","ok"],["39","ลงรายการเท็จ แก้ไข หรือละเว้นการลงรายการ","จำคุกไม่เกิน 2 ปี (ผู้มีหน้าที่จัดทำบัญชีไม่เกิน 3 ปี) อาญา","ok"]];
+const CASES=[
+["หนังสือตอบข้อหารือ กค 0702/1683 (28 มี.ค. 2566) เงินปันผลจากกำไรมูลค่ายุติธรรม","ok","แยกที่ผู้จ่าย ตรึงที่ผู้รับ",["ประเด็น: บริษัทลูกวัดอสังหาริมทรัพย์เพื่อการลงทุนด้วยมูลค่ายุติธรรมแล้วจ่ายเงินปันผลจากกำไรส่วนนั้น ภาษีของผู้จ่ายและผู้รับเป็นอย่างไร","หลัก: มาตรา 65 ทวิ (3) (10), ป.พ.พ. มาตรา 1200–1205, มาตรา 47 ทวิ","ปรับใช้: กำไรจากการตีราคาไม่นำมารวมคำนวณที่ผู้จ่าย เงินปันผลที่จ่ายจากกำไรส่วนนี้ยังไม่ผ่านการเสียภาษี บริษัทแม่จึงไม่ได้ยกเว้น","สรุป: ถ้าบริษัทแม่นำไปรวมเสียภาษีแล้วและระบุอัตราในหนังสือรับรอง ผู้ถือหุ้นบุคคลธรรมดาได้เครดิตตามมาตรา 47 ทวิ"]],
+["หนังสือตอบข้อหารือ กค 0702/3214 (12 มิ.ย. 2551) ส่วนล้ำมูลค่าหุ้น","ok","ตาม (มีข้อยกเว้นแบบแยก)",["ประเด็น: ส่วนล้ำมูลค่าหุ้นจากการเพิ่มทุนเป็นรายได้หรือไม่","หลัก: ป.พ.พ. 1105, 1202 และมาตรา 65","ปรับใช้: โดยหลักเป็นทุน เว้นแต่ออกหุ้นไม่ชอบด้วยกฎหมาย ราคาเกินจริง หรืออำพราง เช่น เงินให้เปล่า","สรุป: ส่วนที่เกินจริงอาจเป็นเงินได้ของทั้งผู้ออกหุ้นและผู้ซื้อ (ส่วนภาษีมูลค่าเพิ่มรอตรวจต้นฉบับ)"]],
+["คำพิพากษาศาลฎีกาที่ 5812/2557 ส่วนล้ำมูลค่าหุ้น 906,296,000 บาท","ok","แยก",["ประเด็น: เงิน 906,296,000 บาทที่ผู้ถือหุ้นต่างประเทศจ่ายซื้อหุ้นเพิ่มทุน 1,000 หุ้น (มูลค่าตราไว้รวม 100,000 บาท) เป็นทุนหรือรายได้","หลัก: ป.พ.พ. 1105 วรรคสอง 1202 วรรคสอง ประมวลรัษฎากร มาตรา 39 และ 65 วรรคหนึ่ง","ปรับใช้: หนังสือบริคณห์สนธิแก้ให้ออกหุ้นเกินมูลค่าได้แล้ว แต่ประชุมเดียวกันมีมติเลิกกิจการ เงินนำไปชำระหนี้ธนาคารต่างประเทศ ผู้ถือหุ้นชำระหนี้ให้ธนาคารโดยตรงได้ ขั้นตอนซับซ้อนจึงเป็นการแปลงรายได้เป็นทุน","สรุป: เป็นเงินให้เปล่าหรือเงินช่วยเหลือ เป็นรายได้ตามมาตรา 65 ภาษี 120,553,174.57 บาท เบี้ยปรับเต็ม ศาลไม่วินิจฉัยข้ออ้างมาตรฐานการบัญชีระหว่างประเทศ (ฉบับเต็มจากผู้เขียน เลขคดีรอเทียบ deka)"]],
+["คำพิพากษาศาลฎีกาที่ 988/2559 เงินปันผลเป็นดอกผลนิตินัย","wait","บริบททางแพ่ง",["คดีบังคับคดี: ยึดหุ้นภายใน 10 ปีครอบถึงเงินปันผล จึงอายัดได้แม้พ้น 10 ปี","ใช้อ้างได้เฉพาะนิยามเงินปันผลในทางแพ่ง ไม่ใช่เรื่องทุนสำรอง (ยืนยันจากแหล่งรอง)"]]];
+const Q=[
+["องค์กรใดมีอำนาจออกมาตรฐานการรายงานทางการเงินของไทย",["กรมพัฒนาธุรกิจการค้า","สภาวิชาชีพบัญชี","สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์","กรมสรรพากร"],1,"2.1","พ.ร.บ.วิชาชีพบัญชี มาตรา 34 มาตรฐานใช้บังคับเมื่อ กกบ. เห็นชอบและประกาศในราชกิจจานุเบกษา"],
+["พระราชบัญญัติการบัญชี พ.ศ. 2543 ใช้บังคับวันใด",["12 พฤษภาคม 2543","10 สิงหาคม 2543","1 มกราคม 2544","24 พฤศจิกายน 2515"],1,"2.1","ประกาศราชกิจจานุเบกษา 12 พ.ค. 2543 ใช้บังคับเมื่อพ้น 90 วัน (มาตรา 2 วิธีนับวันรอเทียบราชกิจจานุเบกษา) ส่วน 24 พ.ย. 2515 คือวันที่ของประกาศคณะปฏิวัติ ฉบับที่ 285"],
+["มาตรฐานใดใช้บังคับวันที่ 1 มกราคม 2571",["TFRS for NPAEs ปรับปรุง 2565","แม่บทการบัญชี","TFRS 18","TFRS 16 สัญญาเช่า"],2,"2.1","TFRS 18 การแสดงรายการและการเปิดเผยข้อมูลในงบการเงิน ประกาศสภาวิชาชีพบัญชีที่ 11/2569"],
+["บริษัทจำกัดต้องยื่นงบการเงินต่อกรมพัฒนาธุรกิจการค้าภายในกำหนดใด",["5 เดือนนับแต่วันปิดบัญชี","1 เดือนนับแต่วันที่ที่ประชุมผู้ถือหุ้นอนุมัติงบ","150 วันนับแต่วันปิดบัญชี","3 เดือนนับแต่วันปิดบัญชี"],1,"2.2","พ.ร.บ.การบัญชี มาตรา 11 ตัวลวง ค. เป็นกำหนดยื่น ภ.ง.ด.50"],
+["บริษัทไม่ยื่นงบการเงินภายในกำหนดตามมาตรา 11 วรรคหนึ่ง ผลทางกฎหมายคือข้อใด",["จำคุกไม่เกิน 1 ปี","ค่าปรับเป็นพินัยไม่เกิน 50,000 บาท","ถูกเพิกถอนใบอนุญาตผู้สอบบัญชี","ไม่มีผลทางกฎหมาย"],1,"2.2","พ.ร.บ.การบัญชี มาตรา 30 ประกอบ พ.ร.บ.ว่าด้วยการปรับเป็นพินัย มาตรา 39"],
+["ตามประกาศกรมพัฒนาธุรกิจการค้า พ.ศ. 2568 ผู้ทำบัญชีต้องพัฒนาความรู้ต่อเนื่องอย่างน้อยเท่าใด",["6 ชั่วโมงต่อปี","12 ชั่วโมงต่อปี โดยมีจรรยาบรรณอย่างน้อย 1 ชั่วโมง","18 ชั่วโมงต่อปี","20 ชั่วโมงต่อปี"],1,"2.2","ประกาศ เรื่อง กำหนดคุณสมบัติและเงื่อนไขของการเป็นผู้ทำบัญชี พ.ศ. 2568 มีผล 1 ม.ค. 2569"],
+["บริษัทจำกัดทุน 20 ล้านบาท ทุนสำรองยกมา 1,950,000 บาท กำไรสุทธิ 4 ล้านบาท ต้องตั้งทุนสำรองขั้นต่ำเท่าใด",["200,000 บาท","50,000 บาท","400,000 บาท","ไม่ต้องตั้ง"],1,"2.3","1/20 ของกำไร = 200,000 แต่อีก 50,000 ก็ถึง 1/10 ของทุน (2,000,000)"],
+["บริษัทแม่ที่เข้าเงื่อนไขการถือหุ้นได้รับเงินปันผลที่ผู้จ่ายระบุว่าจ่ายจากกำไรมูลค่ายุติธรรม ผลทางภาษีตาม กค 0702/1683 คือข้อใด",["ยกเว้นทั้งจำนวนตามมาตรา 65 ทวิ (10)","ไม่ได้รับยกเว้นตามมาตรา 65 ทวิ (10)","ยกเว้นกึ่งหนึ่ง","ผู้จ่ายต้องเสียภาษีแทน"],1,"2.3","กำไรส่วนนี้ยังไม่ผ่านการเสียภาษีที่ผู้จ่าย"],
+["บริษัทมหาชนจำกัดมีกำไรสุทธิ 10 ล้านบาท ขาดทุนสะสมยกมา 4 ล้านบาท ทุนสำรองขั้นต่ำตามมาตรา 116 คือเท่าใด",["500,000 บาท","300,000 บาท","200,000 บาท","600,000 บาท"],1,"2.3","(10,000,000 − 4,000,000) × 5% = 300,000 บาท"],
+["คำพิพากษาศาลฎีกาที่ 5812/2557 แสดงท่าใดของภาษีต่อบัญชีตามกรอบ ตาม–ตรึง–แยก",["ตาม","ตรึง","แยก โดยพิจารณาเนื้อหาทางเศรษฐกิจของธุรกรรม","ไม่เกี่ยวกับกรอบ"],2,"2.4","ศาลไม่ผูกพันกับการบันทึกเป็นส่วนล้ำมูลค่าหุ้น"],
+["หนังสือตอบข้อหารือ กค 0702/1683 ใช้ท่าใด",["ตามอย่างเดียว","แยกที่ผู้จ่าย และตรึงสิทธิยกเว้นของผู้รับ","ตรึงอย่างเดียว","ตามที่ผู้จ่าย และแยกที่ผู้รับ"],1,"2.4","ผู้จ่ายไม่นำกำไรตีราคามารวม ผู้รับได้ยกเว้นเฉพาะส่วนที่จ่ายจากกำไรที่เสียภาษีแล้ว"],
+["ข้อเสนอใดสอดคล้องกับแนว Companies Act 2006 มาตรา 830",["ห้ามกิจการไทยใช้มูลค่ายุติธรรม","จำกัดการจ่ายเงินปันผลไว้ที่กำไรที่เกิดขึ้นจริงสะสม","ยกเลิกทุนสำรองตามกฎหมาย","ให้กรมสรรพากรออกมาตรฐานการบัญชี"],1,"2.5","กฎหมายอังกฤษใช้กำไรที่เกิดขึ้นจริงสะสม (Accumulated Realised Profits)"]];
+const FC=[["ผู้มีหน้าที่จัดทำบัญชี","บุคคลตาม พ.ร.บ.การบัญชี มาตรา 8: ห้างหุ้นส่วนจดทะเบียน บริษัทจำกัด บริษัทมหาชนจำกัด นิติบุคคลต่างประเทศ กิจการร่วมค้าตามประมวลรัษฎากร"],["ผู้ทำบัญชี","ผู้รับผิดชอบการทำบัญชี ไม่ว่าเป็นลูกจ้างหรือผู้รับจ้าง ต้องทำบัญชีตามมาตรฐานตามมาตรา 20"],["ผู้สอบบัญชีรับอนุญาต (CPA)","ผู้ตรวจและแสดงความเห็นต่องบการเงินตามมาตรา 11 วรรคสี่"],["ผู้สอบบัญชีภาษีอากร (TA)","ผู้ที่อธิบดีอนุญาตตามมาตรา 3 สัตต ตรวจและรับรองบัญชีห้างหุ้นส่วนขนาดเล็ก ไม่เกิน 300 รายต่อปี (ท.ป.123/2545 ข้อ 2.2.2)"],["ห้างหุ้นส่วนขนาดเล็ก","ทุนไม่เกิน 5 ล้าน สินทรัพย์รวมไม่เกิน 30 ล้าน รายได้รวมไม่เกิน 30 ล้านบาท ครบทั้งสามข้อ (กฎกระทรวง พ.ศ. 2544)"],["ทุนสำรองตามกฎหมาย (บริษัทจำกัด)","อย่างน้อย 1/20 ของกำไรทุกครั้งที่จ่ายเงินปันผล จนกว่าจะถึง 1/10 ของทุน (ป.พ.พ. 1202)"],["ทุนสำรองตามกฎหมาย (บริษัทมหาชน)","ไม่น้อยกว่าร้อยละ 5 ของกำไรสุทธิหักขาดทุนสะสม จนถึงร้อยละ 10 ของทุนจดทะเบียน (มาตรา 116)"],["ส่วนล้ำมูลค่าหุ้น","เงินที่ได้จากการออกหุ้นเกินมูลค่า ต้องนำไปบวกทุนสำรอง (ป.พ.พ. 1202) โดยหลักไม่เป็นรายได้"],["ความผิดทางพินัย","ความผิดที่เคยมีโทษปรับสถานเดียว เปลี่ยนตาม พ.ร.บ.ว่าด้วยการปรับเป็นพินัย พ.ศ. 2565 มาตรา 39 มีผล 25 ต.ค. 2566 ไม่ใช่โทษอาญาและไม่มีประวัติอาชญากรรม"],["TFRS 18","การแสดงรายการและการเปิดเผยข้อมูลในงบการเงิน ประกาศสภาวิชาชีพบัญชีที่ 11/2569 มีผล 1 ม.ค. 2571 แทน TAS 1"],["TFRS 19","การเปิดเผยข้อมูลของบริษัทย่อยที่ไม่มีส่วนได้เสียสาธารณะ ประกาศที่ 12/2569 มีผล 1 ม.ค. 2571"],["Ausschüttungssperre","HGB § 268 Abs. 8 ของเยอรมนี ห้ามจ่ายกำไรเท่ากับยอดที่บันทึกไว้ในสามกรณี ไม่ได้ห้ามกำไรมูลค่ายุติธรรมทั่วไป"]];
+let S={org:{},quiz:{},seen:{}};
+try{const s=JSON.parse(localStorage.getItem("ch2app")||"null");if(s)S=Object.assign(S,s)}catch(e){}
+function save(){try{localStorage.setItem("ch2app",JSON.stringify(S))}catch(e){}prog()}
+const $=id=>document.getElementById(id),fmt=n=>Math.round(n).toLocaleString("en-US"),v=id=>Math.max(0,+$(id).value||0);
+function show(id){document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.id===id));S.seen[id]=1;save();if(location.hash!=="#"+id)history.replaceState(null,"","#"+id)}
+$("nav").innerHTML=TABS.map(t=>`<button data-id="${t[0]}">${t[1]}</button>`).join("");
+$("nav").onclick=e=>{if(e.target.dataset.id)show(e.target.dataset.id)};
+function prog(){const done=TABS.slice(1).filter(t=>S.seen[t[0]]).length,o=Object.keys(S.org).length,q=Object.keys(S.quiz).length;const p=Math.round(done/7*40+o/ORG.length*30+q/Q.length*30);$("prog").style.width=p+"%";$("progtxt").textContent=`${p}% · จับคู่แล้ว ${o}/${ORG.length} · ทำแบบทดสอบ ${q}/${Q.length}`}
+// org
+function renderOrg(){$("orgList").innerHTML=ORG.map((it,i)=>{const a=S.org[i];return `<div class="card"><div>${i+1}. ${it[0]}</div><div class="row" style="margin-top:8px"><select data-i="${i}"><option value="">เลือก…</option>${WHO.map((w,k)=>`<option value="${k}" ${a==k?"selected":""}>${w}</option>`).join("")}</select></div><div class="fb ${a!==undefined?(a==it[1]?"good":"bad"):""}">${a!==undefined?(a==it[1]?"ถูกต้อง: ":"ยังไม่ถูก คำตอบคือ "+WHO[it[1]]+": ")+it[2]:""}</div></div>`}).join("");
+ const n=Object.keys(S.org).length,r=Object.entries(S.org).filter(([i,k])=>ORG[i][1]==k).length;$("orgScore").innerHTML=`<b>คะแนน</b> ถูก ${r} จาก ${n} ข้อที่ตอบ (ทั้งหมด ${ORG.length}) <button class="btn" id="orgReset">เริ่มใหม่</button>`;$("orgReset").onclick=()=>{S.org={};save();renderOrg()}}
+$("orgList").onchange=e=>{if(e.target.value==="")return;S.org[e.target.dataset.i]=+e.target.value;save();renderOrg()};
+// reserve
+let pcl=false;
+function calc(){const cap=v("iCap"),res=v("iRes"),pbt=v("iPbt"),fv=Math.min(v("iFv"),pbt),loss=v("iLoss");
+ const taxable=pbt-fv,tax=taxable*0.2,np=pbt-tax,cap10=cap*0.1,gap=Math.max(0,cap10-res);
+ let base,req,rule;
+ if(!pcl){base=np;req=Math.min(np/20,gap);rule=`น้อยกว่าระหว่าง 1/20 ของกำไร (${fmt(np/20)}) กับส่วนที่ยังขาดถึง 1/10 ของทุน (${fmt(gap)})`}
+ else{base=Math.max(0,np-loss);req=Math.min(base*0.05,gap);rule=`ร้อยละ 5 ของกำไรสุทธิหักขาดทุนสะสม (${fmt(base*0.05)}) แต่ไม่เกินส่วนที่ยังขาดถึงร้อยละ 10 ของทุน (${fmt(gap)})`}
+ const pay=Math.max(0,np-loss-req),fvPart=Math.min(fv,pay),exempt=pay-fvPart,parentTax=fvPart*0.2;
+ $("resOut").innerHTML=`<table><tr><th>รายการ</th><th class="num">บาท</th></tr>
+ <tr><td>กำไรสุทธิทางภาษี (กำไรก่อนภาษี − กำไรมูลค่ายุติธรรม ตามมาตรา 65 ทวิ (3))</td><td class="num">${fmt(taxable)}</td></tr>
+ <tr><td>ภาษีเงินได้นิติบุคคล ร้อยละ 20</td><td class="num">${fmt(tax)}</td></tr>
+ <tr><td>กำไรสุทธิหลังภาษี</td><td class="num">${fmt(np)}</td></tr>
+ ${pcl&&loss?`<tr><td>หัก ขาดทุนสะสมยกมา</td><td class="num">(${fmt(loss)})</td></tr>`:""}
+ <tr><td>ทุนสำรองขั้นต่ำ: ${rule}</td><td class="num">${fmt(req)}</td></tr>
+ <tr><td><b>กำไรที่จ่ายเงินปันผลได้สูงสุด</b></td><td class="num"><b>${fmt(pay)}</b></td></tr>
+ <tr><td colspan="2" style="padding-top:12px"><b>ถ้าจ่ายทั้งหมดให้บริษัทแม่ที่เข้าเงื่อนไขมาตรา 65 ทวิ (10) และระบุว่าส่วนหนึ่งมาจากกำไรมูลค่ายุติธรรม</b></td></tr>
+ <tr><td>ส่วนที่ได้รับยกเว้น (จ่ายจากกำไรที่เสียภาษีแล้ว)</td><td class="num">${fmt(exempt)}</td></tr>
+ <tr><td>ส่วนที่ไม่ได้รับยกเว้น (กค 0702/1683)</td><td class="num">${fmt(fvPart)}</td></tr>
+ <tr><td>ภาษีของบริษัทแม่ ร้อยละ 20</td><td class="num">${fmt(parentTax)}</td></tr></table>`;
+ const fb=$("resFb");const def=!pcl&&cap===20000000&&res===1500000&&pbt===5000000&&fv===2000000;
+ fb.className="fb "+(def?"good":"info");fb.textContent=def?"ตรงกับตัวอย่าง 2.1 และ 2.2 ในตำรา: จ่ายได้ 4,180,000 บาท บริษัทแม่เสียภาษี 400,000 บาท":"ป.พ.พ. ไม่ได้แยกกำไรที่ยังไม่เกิดขึ้นจริงออกจากกำไรที่จ่ายได้ ภาษีจึงไปเก็บที่ผู้รับแทน (หัวข้อ 2.4 และหลัก 2.2)"}
+["iCap","iRes","iPbt","iFv","iLoss"].forEach(id=>$(id).oninput=calc);
+$("tCo").onclick=()=>{pcl=false;$("tCo").classList.add("primary");$("tPcl").classList.remove("primary");$("wLoss").style.display="none";calc()};
+$("tPcl").onclick=()=>{pcl=true;$("tPcl").classList.add("primary");$("tCo").classList.remove("primary");$("wLoss").style.display="";calc()};
+// TA
+function ta(){const c=v("hCap"),a=v("hAs"),r=v("hRev"),t=[["ทุน",c,5e6],["สินทรัพย์รวม",a,3e7],["รายได้รวม",r,3e7]];const ok=t.every(x=>x[1]<=x[2]);
+ $("taOut").innerHTML=`<table><tr><th>เกณฑ์</th><th class="num">เพดาน</th><th class="num">ห้างหุ้นส่วน</th><th>ผล</th></tr>${t.map(x=>`<tr><td>${x[0]}</td><td class="num">${fmt(x[2])}</td><td class="num">${fmt(x[1])}</td><td><span class="tag ${x[1]<=x[2]?"ok":"bad"}">${x[1]<=x[2]?"ผ่าน":"ไม่ผ่าน"}</span></td></tr>`).join("")}</table>
+ <div class="fb ${ok?"good":"bad"}">${ok?"ได้รับยกเว้นตามกฎกระทรวง พ.ศ. 2544 งบไม่ต้องผ่าน CPA แต่ยังต้องให้ TA หรือ CPA ตรวจและรับรองบัญชีตามประมวลรัษฎากร มาตรา 3 สัตต":"ไม่ได้รับยกเว้น เพราะเกณฑ์ต้องครบทั้งสามข้อ งบต้องผ่าน CPA ตามมาตรา 11 วรรคสี่ TA รายเดิมรับรองแทนไม่ได้ ต้องตรวจเกณฑ์ทุกรอบบัญชี"}</div>`}
+["hCap","hAs","hRev"].forEach(id=>$(id).oninput=ta);
+// penalties
+$("penTbl").innerHTML=`<tr><th>มาตรา</th><th>ฐานความผิดโดยสรุป</th><th>อัตราสูงสุด</th><th>สถานะ</th></tr>`+PEN.map(p=>`<tr><td>${p[0]}</td><td>${p[1]}</td><td>${p[2]}</td><td><span class="tag ${p[3]}">${p[3]==="ok"?"ยืนยันแล้ว":"รอตรวจ"}</span></td></tr>`).join("");
+// cases
+$("caseList").innerHTML=CASES.map(c=>`<details class="card"><summary><b>${c[0]}</b> <span class="tag ${c[1]}">${c[1]==="ok"?"ยืนยันจาก rd.go.th":"แหล่งรอง"}</span> <span class="tag">${c[2]}</span></summary><ul>${c[3].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("");
+// quiz
+function renderQ(){$("quizBox").innerHTML=Q.map((q,i)=>{const a=S.quiz[i];return `<div class="card"><small class="q">ข้อ ${i+1} · LO${q[3]}</small><div>${q[0]}</div>${q[1].map((o,j)=>`<button class="btn opt ${a!==undefined?(j===q[2]?"right":(j===a?"wrong":"")):""}" data-i="${i}" data-j="${j}" ${a!==undefined?"disabled":""}>${"กขคง"[j]}. ${o}</button>`).join("")}<div class="fb ${a!==undefined?(a===q[2]?"good":"bad"):""}">${a!==undefined?(a===q[2]?"ถูกต้อง ":"คำตอบคือ "+"กขคง"[q[2]]+" ")+"· "+q[4]:""}</div></div>`}).join("");
+ const by={};Q.forEach((q,i)=>{by[q[3]]=by[q[3]]||[0,0];if(S.quiz[i]!==undefined){by[q[3]][1]++;if(S.quiz[i]===q[2])by[q[3]][0]++}});
+ $("quizSum").innerHTML=`<b>คะแนนราย LO</b><table>${Object.keys(by).sort().map(k=>`<tr><td>LO${k}</td><td class="num">${by[k][0]} / ${by[k][1]} ข้อที่ตอบ</td></tr>`).join("")}</table><button class="btn" id="qReset" style="margin-top:8px">ทำใหม่</button>`;$("qReset").onclick=()=>{S.quiz={};save();renderQ()}}
+$("quizBox").onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;S.quiz[b.dataset.i]=+b.dataset.j;save();renderQ()};
+// flashcards
+let deck=FC.map((_,i)=>i),side=0;
+function renderF(){const c=FC[deck[0]];$("flash").innerHTML=side?`<div><small class="q">${c[0]}</small><br>${c[1]}</div>`:`<b>${c[0]}</b>`;$("fCount").textContent=`เหลือ ${deck.length} ใบในรอบนี้`}
+$("flash").onclick=()=>{side=1-side;renderF()};$("fNo").onclick=()=>{const x=deck.shift();deck.splice(Math.min(2,deck.length),0,x);side=0;renderF()};$("fYes").onclick=()=>{const x=deck.shift();if(!deck.length)deck=FC.map((_,i)=>i);else deck.push(x);side=0;renderF()};
+renderOrg();calc();ta();renderQ();renderF();
+const start=(location.hash||"#home").slice(1);show(TABS.some(t=>t[0]===start)?start:"home");
+window.addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(TABS.some(t=>t[0]===h))show(h)});
+</script>
+</body>
+</html>

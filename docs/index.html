@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แอปประจำเล่ม การบัญชีสำหรับนักกฎหมายภาษีอากร</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&family=Noto+Serif+Thai:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f7;--paper:#fff;--ink:#15233a;--muted:#5a6678;--line:#d5dbe3;--accent:#0d6466;--accent-soft:#e1efef;--gate:#a86a12;--gate-soft:#f7ecd9;
+  --display:"Noto Serif Thai",Georgia,serif;--body:"Noto Sans Thai",system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1620;--paper:#17212d;--ink:#e6ebf2;--muted:#9aa6b6;--line:#2c3a4a;--accent:#4fb8b4;--accent-soft:#163334;--gate:#e2a54a;--gate-soft:#3a2c14;color-scheme:dark}}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.65}
+main{max-width:860px;margin:0 auto;padding:24px 16px 48px;display:grid;gap:22px}
+.brand{display:inline-flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 14px;margin-bottom:14px}
+.brand img{height:56px;width:auto;max-width:100%;display:block}
+.brand .org{font-family:var(--display);font-weight:700;font-size:1.15rem;color:#15233a;border-left:2px solid #d5dbe3;padding-left:12px}
+h1{font-family:var(--display);font-size:1.75rem;line-height:1.3;margin:0 0 6px}
+h2{font-family:var(--display);font-size:1.2rem;margin:0 0 10px}
+header p{margin:0;color:var(--muted);max-width:68ch}
+section{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px}
+ol.ch{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+ol.ch a{display:grid;grid-template-columns:86px 1fr;gap:10px;align-items:baseline;padding:10px 12px;border:1px solid var(--line);border-radius:8px;color:inherit;text-decoration:none}
+ol.ch a:hover,ol.ch a:focus-visible{border-color:var(--accent);background:var(--accent-soft);outline:none}
+.no{font-weight:700;color:var(--accent);white-space:nowrap}
+ul.how{margin:0;padding-left:20px}
+.note{font-size:.9rem;color:var(--muted);border-left:3px solid var(--gate);padding:6px 10px;background:var(--gate-soft);border-radius:0 6px 6px 0}
+footer{font-size:.85rem;color:var(--muted)}
+</style>
+<script src="gate.js"></script>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand"><img src="brand/logo.png" alt="Dr.VIT & PD | TaxBiz Clear" data-atx-logo></div>
+  <h1>แอปประจำเล่ม การบัญชีสำหรับนักกฎหมายภาษีอากร</h1>
+  <p>กิจกรรมจำแนกชั้น ตาม–ตรึง–แยก เครื่องคำนวณ แบบทดสอบ และคดีศึกษาประจำบท ใช้คู่กับตำรา การบัญชีสำหรับนักกฎหมายภาษีอากร (หลักสูตรนิติศาสตรมหาบัณฑิต) โดย ดร.วิทยา อรุณศิริเพ็ชร และ อ.พงษ์ธร ดวงปัญญา</p>
+</header>
+<section>
+  <h2>วิธีใช้คู่กับเล่ม</h2>
+  <ul class="how">
+    <li>อ่านบทในเล่มก่อน แล้วสแกน QR ที่หน้าเปิดบท หรือเลือกบทจากรายการด้านล่าง</li>
+    <li>ค่าตั้งต้นของใบงานตรงกับตัวอย่างในบท ลองเปลี่ยนตัวเลขเพื่อดูผลต่อภาษี</li>
+    <li>ทำแบบทดสอบท้ายบทในเล่มให้ครบก่อนตรวจคำตอบในแอป</li>
+  </ul>
+</section>
+<section>
+  <h2>แอปรายบท</h2>
+  <ol class="ch">
+<li><a href="ch01.html"><span class="no">บทที่ 1</span><span class="t">กำไรทางบัญชีกับกำไรสุทธิทางภาษี</span></a></li>
+<li><a href="ch02.html"><span class="no">บทที่ 2</span><span class="t">กฎหมายและองค์กรที่กำกับการบัญชีไทย</span></a></li>
+  </ol>
+  <p class="note" style="margin-top:12px">บทที่ 3 ถึง 19 จะเพิ่มเมื่อบทนั้นผ่านการตรวจอิสระ</p>
+</section>
+<footer>
+  <p>Dr.VIT & PD | TaxBiz Clear · ข้อมูลในแอปเป็นข้อมูลจำลองเพื่อการสอน ห้ามนำข้อมูลผู้ตอบจริงหรือข้อมูลของลูกค้าใส่แอปหรือ GenAI</p>
+  <p>ตัวเลขและแนวกฎหมายเป็นไปตามสถานะที่ระบุในแต่ละบท ผู้อ่านควรตรวจกฎหมายฉบับปัจจุบันก่อนนำไปใช้</p>
+</footer>
+</main>
+</body>
+</html>

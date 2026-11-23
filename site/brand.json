@@ -1,0 +1,11 @@
+{
+ "_note": "เปลี่ยนแบรนด์: แทน docs/brand/logo.png และ logo-stacked.png; เปลี่ยนรหัส: แก้ gate_hash = SHA-256 ของรหัสตัวพิมพ์ใหญ่ไม่มีช่องว่าง แล้วรัน python3 site/build_site.py",
+ "logo": "brand/logo.png",
+ "logo_stacked": "brand/logo-stacked.png",
+ "logo_alt": "Dr.VIT & PD | TaxBiz Clear",
+ "series": "Dr.VIT & PD | TaxBiz Clear",
+ "book": "การบัญชีสำหรับนักกฎหมายภาษีอากร",
+ "author": "ดร.วิทยา อรุณศิริเพ็ชร และ อ.พงษ์ธร ดวงปัญญา",
+ "site_url": "https://drvitpd.github.io/tax-law-accounting-textbook/",
+ "gate_hash": "4f24031c08ea28d4103e35bf3a7309e2444648ffeb8b4b9eaa3d21423cd6529a"
+}

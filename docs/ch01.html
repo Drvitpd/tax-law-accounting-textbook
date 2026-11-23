@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แอปบทที่ 1 การบัญชี กฎหมาย และภาษีอากร</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--follow:#1f9d55;--lock:#d4a017;--depart:#d64545;--ink:#1d2433;--quiet:#5b6577;--line:#d9dde5;--bg:#fff8f3;--card:#fff;--accent:#F26B21;--accent-soft:#fde8dc;--brand:#1C2230}
+*{box-sizing:border-box}
+body{margin:0;font-family:Sarabun,system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55}
+header{background:#fff;color:var(--brand);padding:14px 20px;border-bottom:5px solid var(--accent);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.logo{height:38px;width:auto}.tax{background:var(--accent);color:#fff;font-weight:700;letter-spacing:3px;padding:4px 12px;border-radius:6px;font-size:18px}.htxt{flex:1 1 260px}
+header h1{margin:0;font-size:19px;font-weight:700}
+header p{margin:2px 0 0;font-size:13px;color:var(--quiet)}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}nav button:hover{border-color:var(--accent)}
+main{max-width:860px;margin:0 auto;padding:18px 14px 60px}
+section{display:none}section.on{display:block}
+h2{font-size:20px;margin:6px 0 4px}
+.lead{color:var(--quiet);margin:0 0 14px}
+.abbr{width:100%;border-collapse:collapse;font-size:14px}.abbr td{border-top:1px solid var(--line);padding:5px 6px;vertical-align:top}.abbr td:first-child{font-weight:700;white-space:nowrap;color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent-soft);border-radius:12px;padding:14px 16px;margin:10px 0}h2{color:var(--accent)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.b-follow{border-color:var(--follow);color:var(--follow)}.b-lock{border-color:var(--lock);color:#9a7408}.b-depart{border-color:var(--depart);color:var(--depart)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);color:var(--quiet)}
+.tag.ok{border-color:var(--follow);color:var(--follow)}.tag.wait{border-color:var(--lock);color:#9a7408}
+.fb{margin-top:8px;padding:8px 10px;border-radius:8px;font-size:14px;display:none}
+.fb.good{display:block;background:#e7f6ec;color:#155d35}.fb.bad{display:block;background:#fbe9e9;color:#8a2626}
+.progress{height:8px;background:var(--line);border-radius:4px;overflow:hidden}.progress div{height:100%;background:var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.layer{border-left:5px solid;padding-left:10px}
+.flash{min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:20px;cursor:pointer;user-select:none}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.right{background:#e7f6ec;border-color:var(--follow)}.opt.wrong{background:#fbe9e9;border-color:var(--depart)}
+small.q{color:var(--quiet)}
+svg text{font-family:Sarabun,sans-serif}
+</style>
+<style>header img.logo{height:52px;width:auto;max-width:100%}@media (max-width:480px){header img.logo{height:40px}}.atx-nav{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.9rem;margin:0 0 6px}.atx-nav a{color:var(--accent,#F26B21);font-weight:700;text-decoration:none}.atx-nav a:hover{text-decoration:underline}</style>
+<script src="gate.js"></script>
+</head>
+<body>
+<header><img class="logo" src="brand/logo.png" alt="Dr.VIT & PD | TaxBiz Clear"><div class="htxt"><h1>แอปประจำบทที่ 1 · กำไรทางบัญชีกับกำไรสุทธิทางภาษี</h1><p>ตำรา การบัญชีสำหรับนักกฎหมายภาษีอากร · ร่างสำหรับทดลองใช้ · ตัวเลขในแอปเป็นตัวอย่างสมมติ</p></div></header>
+<nav id="nav"></nav>
+<main>
+<div class="atx-nav" role="navigation" aria-label="นำทาง"><a href="./">สารบัญแอปประจำเล่ม</a> · <a href="ch02.html">บทที่ 2</a></div>
+<section id="home">
+ <h2>เริ่มต้น</h2><p class="lead">ทำครบหกกิจกรรมแล้วจะเข้าใจกรอบ ตาม–ตรึง–แยก ที่ใช้ทั้งเล่ม</p>
+ <div class="card"><b>ความคืบหน้า</b><div class="progress" style="margin-top:8px"><div id="prog" style="width:0"></div></div><small class="q" id="progtxt"></small></div>
+ <div class="card"><b>ผลลัพธ์การเรียนรู้ (Learning Outcomes: LO)</b><ol style="margin:6px 0 0 18px;padding:0">
+  <li>LO1.1 อธิบายเป้าหมายที่ต่างกันของกำไรทางบัญชีและกำไรสุทธิทางภาษี</li>
+  <li>LO1.2 จำแนกบทบัญญัติตามกรอบ ตาม–ตรึง–แยก</li>
+  <li>LO1.3 ปรับปรุงกำไรสุทธิทางบัญชีของกิจการที่ใช้ TFRS for NPAEs และ Full TFRS เป็นกำไรสุทธิทางภาษีอากรตามมาตรา 65</li>
+  <li>LO1.4 ประเมินน้ำหนักของหลักการบัญชีที่รับรองทั่วไปในคดีภาษี</li>
+  <li>LO1.5 เสนอแนวคิดปรับความสัมพันธ์บัญชีกับภาษีของไทย</li></ol></div>
+ <div class="card"><b>คำย่อที่ใช้ในแอป</b><small class="q" style="display:block;margin:4px 0 6px">คำย่อทุกตัวในแอปหมายถึงคำเต็มตามตารางนี้</small><table class="abbr">
+<tr><td>TFRS</td><td>มาตรฐานการรายงานทางการเงิน (Thai Financial Reporting Standards)</td></tr>
+<tr><td>Full TFRS</td><td>มาตรฐานการรายงานทางการเงิน ฉบับสมบูรณ์ (Full Thai Financial Reporting Standards) ชุดที่ใช้กับกิจการที่มีส่วนได้เสียสาธารณะ</td></tr>
+<tr><td>TFRS for NPAEs</td><td>มาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียสาธารณะ (Thai Financial Reporting Standards for Non-Publicly Accountable Entities)</td></tr>
+<tr><td>PAEs</td><td>กิจการที่มีส่วนได้เสียสาธารณะ (Publicly Accountable Entities)</td></tr>
+<tr><td>TFRS 16</td><td>มาตรฐานการรายงานทางการเงิน ฉบับที่ 16 เรื่อง สัญญาเช่า (Leases)</td></tr>
+<tr><td>TAS 12</td><td>มาตรฐานการบัญชี ฉบับที่ 12 เรื่อง ภาษีเงินได้ (Thai Accounting Standard 12 Income Taxes)</td></tr>
+<tr><td>ECL</td><td>ผลขาดทุนด้านเครดิตที่คาดว่าจะเกิดขึ้น (Expected Credit Loss)</td></tr>
+<tr><td>ROU</td><td>สินทรัพย์สิทธิการใช้ (Right-of-Use Asset)</td></tr>
+<tr><td>FIFO</td><td>วิธีเข้าก่อนออกก่อน (First-In, First-Out)</td></tr>
+<tr><td>IRAC</td><td>ประเด็น–หลักกฎหมาย–ปรับใช้–สรุป (Issue–Rule–Application–Conclusion)</td></tr>
+<tr><td>GAAP</td><td>หลักการบัญชีที่รับรองทั่วไป (Generally Accepted Accounting Principles)</td></tr>
+<tr><td>GloBE</td><td>กฎต่อต้านการกัดกร่อนฐานภาษีระดับโลก (Global Anti-Base Erosion Rules)</td></tr>
+<tr><td>CTA 2009</td><td>พระราชบัญญัติภาษีเงินได้นิติบุคคลของสหราชอาณาจักร (Corporation Tax Act 2009)</td></tr>
+<tr><td>EStG</td><td>กฎหมายภาษีเงินได้ของเยอรมนี (Einkommensteuergesetz)</td></tr>
+<tr><td>CAMT</td><td>ภาษีขั้นต่ำทางเลือกสำหรับบริษัทของสหรัฐฯ (Corporate Alternative Minimum Tax)</td></tr>
+<tr><td>ภ.ง.ด.50</td><td>แบบแสดงรายการภาษีเงินได้นิติบุคคล</td></tr>
+<tr><td>พ.ร.ก. / พ.ร.ฎ.</td><td>พระราชกำหนด / พระราชกฤษฎีกา</td></tr>
+<tr><td>ป.พ.พ.</td><td>ประมวลกฎหมายแพ่งและพาณิชย์</td></tr>
+<tr><td>ท.ป.</td><td>คำสั่งกรมสรรพากรที่ออกโดยอาศัยอำนาจตามตัวบท</td></tr>
+<tr><td>กค</td><td>รหัสกระทรวงการคลังในเลขที่หนังสือตอบข้อหารือ</td></tr>
+</table></div>
+ <div class="card"><b>สามชั้น</b>
+  <div class="layer" style="border-color:var(--follow);margin-top:8px"><b>ตาม</b> ภาษีรับตัวเลขหรือหลักการบัญชีที่รับรองทั่วไป</div>
+  <div class="layer" style="border-color:var(--lock);margin-top:8px"><b>ตรึง</b> ยอมรับวิธีบัญชี แต่ต้องใช้ตลอดไปจนอธิบดีอนุมัติให้เปลี่ยน</div>
+  <div class="layer" style="border-color:var(--depart);margin-top:8px"><b>แยก</b> ภาษีมีเกณฑ์ของตนเอง ไม่ขึ้นกับบัญชี</div></div>
+</section>
+
+<section id="classify"><h2>1. จำแนกชั้น</h2><p class="lead">เลือกชั้นของแต่ละรายการ ระบบจะบอกเหตุผลและตัวบททันที</p><div id="clsList"></div><div class="card" id="clsScore"></div></section>
+
+<section id="tree"><h2>2. ผังตัดสินใจ</h2><p class="lead">ตอบสองคำถามเพื่อจัดชั้นรายการที่คุณคิดขึ้นเอง</p><div class="card" id="treeBox"></div></section>
+
+<section id="bridge"><h2>3. ปรับปรุงกำไรสุทธิทางบัญชีเป็นกำไรสุทธิทางภาษีอากร</h2><p class="lead">เลือกบริษัท แล้วติ๊กเฉพาะรายการปรับปรุงที่ถูกต้องใน ภ.ง.ด.50 (แบบแสดงรายการภาษีเงินได้นิติบุคคล) เป้าหมายคือ 8,800,000 บาท ตามตัวอย่าง 1.1 ในตำรา</p>
+ <div class="row"><button class="btn" id="bN">เหนือเทรด (TFRS for NPAEs)</button><button class="btn" id="bT">ใต้เทรด (Full TFRS)</button></div>
+ <div class="card"><div id="brList"></div><div id="brSvg" style="margin-top:10px"></div><div class="fb" id="brFb"></div></div></section>
+
+<section id="cases"><h2>4. ผังคดีและกรณีศึกษา</h2><p class="lead">แตะการ์ดเพื่อเปิดการวิเคราะห์แบบ ประเด็น–หลักกฎหมาย–ปรับใช้–สรุป (Issue–Rule–Application–Conclusion: IRAC) ป้ายสถานะบอกว่าตรวจต้นฉบับแล้วหรือยัง</p><div id="caseList"></div></section>
+
+<section id="quiz"><h2>5. แบบทดสอบ 16 ข้อ</h2><p class="lead">ตอบแล้วเห็นเหตุผลทันที สรุปคะแนนราย LO อยู่ท้ายสุด</p><div id="quizBox"></div><div class="card" id="quizSum"></div></section>
+
+<section id="cards"><h2>6. การ์ดศัพท์</h2><p class="lead">แตะการ์ดเพื่อพลิก กด "ยังจำไม่ได้" เพื่อให้คำนั้นกลับมาเร็วขึ้น</p>
+ <div class="card flash" id="flash"></div><div class="row"><button class="btn" id="fNo">ยังจำไม่ได้</button><button class="btn primary" id="fYes">จำได้แล้ว</button><small class="q" id="fCount"></small></div></section>
+</main>
+<script>
+const TABS=[["home","เริ่มต้น"],["classify","จำแนกชั้น"],["tree","ผังตัดสินใจ"],["bridge","ปรับปรุงกำไร"],["cases","คดีและกรณีศึกษา"],["quiz","แบบทดสอบ"],["cards","การ์ดศัพท์"]];
+const L={F:"ตาม",K:"ตรึง",D:"แยก"},CL={F:"b-follow",K:"b-lock",D:"b-depart"};
+const ITEMS=[
+["ค่าเผื่อหนี้สงสัยจะสูญหรือผลขาดทุนด้านเครดิตที่คาดว่าจะเกิดขึ้น","D","เงินสำรองต้องห้ามตามมาตรา 65 ตรี (1) หักได้เมื่อจำหน่ายหนี้สูญตามมาตรา 65 ทวิ (9)"],
+["ประมาณการผลประโยชน์พนักงานหลังออกจากงาน","D","เงินสำรองตามมาตรา 65 ตรี (1) หักได้เมื่อจ่ายจริง"],
+["ค่ารับรองส่วนที่เกินเกณฑ์กฎกระทรวง","D","มาตรา 65 ตรี (4) และกฎกระทรวง ภาษีกำหนดเพดานเอง"],
+["เบี้ยปรับและเงินเพิ่มภาษีอากร","D","มาตรา 65 ตรี (6)"],
+["ค่าเสื่อมราคาส่วนที่เกินอัตราตามพระราชกฤษฎีกา (ฉบับที่ 145)","D","มาตรา 65 ทวิ (2) ภาษีกำหนดอัตราสูงสุดเอง"],
+["ขายสินค้าให้บริษัทในเครือต่ำกว่าราคาตลาดโดยไม่มีเหตุอันสมควร","D","มาตรา 65 ทวิ (4) ภาษีสร้างรายได้ที่ไม่มีในบัญชี"],
+["ค่าตอบแทนกรรมการของงานปีนี้ ที่ประชุมใหญ่อนุมัติปีหน้า","D","คำพิพากษาศาลฎีกาที่ 3543/2542 เกณฑ์สิทธิทางภาษีต้องการความแน่นอน"],
+["ผลิตผลเกษตรที่เป็นสินค้าคงเหลือ ซึ่งบัญชีวัดด้วยมูลค่ายุติธรรม","D","หนังสือตอบข้อหารือ กค 0706/10178 มาตรา 65 ทวิ (6) ภาษีใช้ราคาทุนหรือราคาตลาดที่ต่ำกว่า (ถ้าเป็นสินทรัพย์ชีวภาพใช้ราคาทุนตามมาตรา 65 ทวิ (3))"],
+["เปลี่ยนวิธีตีราคาสินค้าจากวิธีเข้าก่อนออกก่อน (First-In, First-Out: FIFO) เป็นถัวเฉลี่ย","K","มาตรา 65 ทวิ (6) วรรคสอง ต้องได้รับอนุมัติจากอธิบดี"],
+["วิธีแปลงค่าเงินตราต่างประเทศ ณ วันสิ้นรอบที่บริษัทเลือกไว้","K","มาตรา 65 ทวิ (5) ที่แก้ไขในปี 2562 เลือกแล้วใช้ตลอดไป"],
+["ธนาคารรับรู้รายได้ดอกเบี้ยตามวิธีในคำสั่ง ท.ป. 1/2528 ข้อ 3.1","K","มาตรา 65 วรรคสาม และคำสั่งกรมสรรพากรที่ ท.ป. 1/2528 ข้อ 3 ถือว่าได้รับอนุมัติแล้ว ต้องใช้ต่อไปจนอธิบดีอนุมัติให้เปลี่ยน"],
+["วิธีคิดค่าเสื่อมราคาของลิขสิทธิ์ภาพยนตร์ที่ใช้มาเดิม","K","หนังสือตอบข้อหารือ กค 0706/8823 เรื่องเดิมใช้วิธีเดิมต่อไป เรื่องใหม่เลือกวิธีที่รับรองทั่วไปได้โดยไม่ต้องขออนุมัติ แล้วใช้ตลอดไป"],
+["ผู้เช่าที่ใช้ TFRS 16 เลือกหักค่าเช่าตามงวดแทนค่าเสื่อมราคาสินทรัพย์สิทธิการใช้และดอกเบี้ย","K","คำสั่ง ท.ป. 1/2528 ข้อ 3.4 แก้ไขโดย ท.ป. 299/2561 เลือกแล้วใช้วิธีนั้นตลอดไป"],
+["รายได้ขายสินค้าที่รับรู้ตามหลักการบัญชีที่รับรองทั่วไป","F","คำสั่ง ท.ป. 1/2528 ที่ออกตามมาตรา 65 วรรคสอง รับวิธีการทางบัญชีที่รับรองทั่วไป"],
+["ค่าสาธารณูปโภคค้างจ่ายสิ้นปีที่จำนวนแน่นอนแล้ว","F","มาตรา 65 เกณฑ์สิทธิ บัญชีกับภาษีตรงกัน"],
+["ต้นทุนขายตามบัญชีที่มีเอกสารประกอบครบ","F","มาตรา 65 ภาษีรับตัวเลขบัญชี"]];
+const BR={N:{name:"เหนือเทรด (TFRS for NPAEs)",base:8250000,items:[["บวก ค่าปรับทางอาญาและเงินเพิ่มภาษี (มาตรา 65 ตรี (6))",50000,1],["บวก ค่ารับรองส่วนที่เกินเกณฑ์ (มาตรา 65 ตรี (4))",100000,1],["บวก ค่าเผื่อหนี้สงสัยจะสูญ (มาตรา 65 ตรี (1))",400000,1],["หัก ค่าเช่าที่จ่ายจริง 1,200,000 ซึ่งบันทึกเป็นค่าใช้จ่ายแล้ว",-1200000,0],["บวก ภาษีเงินได้รอการตัดบัญชี",100000,0]]},
+T:{name:"ใต้เทรด (Full TFRS)",base:7890000,items:[["บวก ค่าปรับทางอาญาและเงินเพิ่มภาษี (มาตรา 65 ตรี (6))",50000,1],["บวก ค่ารับรองส่วนที่เกินเกณฑ์ (มาตรา 65 ตรี (4))",100000,1],["บวก ผลขาดทุนด้านเครดิตที่คาดว่าจะเกิดขึ้น (Expected Credit Loss: ECL) (มาตรา 65 ตรี (1))",610000,1],["บวก ค่าเสื่อมราคาสินทรัพย์สิทธิการใช้ (Right-of-Use Asset: ROU) และดอกเบี้ย 1,350,000 หัก ค่าเช่าที่จ่าย 1,200,000 (ชั้นตรึง: สมมติเลือกหักตามค่าเช่าตาม ท.ป. 1/2528 ข้อ 3.4)",150000,1],["หัก ค่าเช่าที่จ่ายจริงอีกครั้ง",-1200000,0]]}};
+const CASES=[
+["คำพิพากษาศาลฎีกาที่ 3543/2542 ค่าหุ้นค้างชำระและค่าตอบแทนกรรมการ","ok","แยก",["ประเด็น: ประเมินดอกเบี้ยจากค่าหุ้นค้างชำระ 1,200,000 บาทได้หรือไม่ และค่าตอบแทนกรรมการงานปี 2535 ที่อนุมัติ 28 เม.ย. 2536 เป็นรายจ่ายรอบใด","หลัก: มาตรา 65 วรรคสอง มาตรา 65 ทวิ (4) และประมวลกฎหมายแพ่งและพาณิชย์ (ป.พ.พ.) มาตรา 1122","ปรับใช้: ลงบัญชีว่ารับค่าหุ้นครบเท่ากับให้กู้ยืม หน้าที่จ่ายค่าตอบแทนแน่นอนเมื่อที่ประชุมใหญ่อนุมัติ","สรุป: ประเมินดอกเบี้ยได้ ค่าตอบแทนเป็นรายจ่ายปี 2536"]],
+["คำพิพากษาศาลฎีกาที่ 1445/2541 เกณฑ์สิทธิบังคับ","ok","ตาม",["ประเด็น: ดอกเบี้ยรับที่ไม่ได้ลงบัญชีต้องรับรู้ตามเกณฑ์สิทธิหรือไม่","หลัก: มาตรา 65 ที่แก้ไขโดยพระราชกำหนดแก้ไขเพิ่มเติมประมวลรัษฎากร (ฉบับที่ 13) พ.ศ. 2527","ปรับใช้: รายได้ที่เกิดในรอบใดต้องรวมในรอบนั้น ข้ออ้างที่ไม่ยกในศาลชั้นต้นต้องห้ามอุทธรณ์","สรุป: เกณฑ์สิทธิเป็นหน้าที่ตามกฎหมาย ต้องยกประเด็นบัญชีตั้งแต่ศาลชั้นต้น"]],
+["คำพิพากษาศาลฎีกาที่ 4380/2531 และ 1293/2531 ก่อนมีเกณฑ์สิทธิในตัวบท","ok","ประวัติ",["ก่อนแก้มาตรา 65 ปี 2527 ตัวบทไม่ได้กำหนดเกณฑ์ ศาลตีความ \"กิจการที่กระทำ\" ว่าต้องได้รับเงินหรือประโยชน์มาแล้ว","4380/2531 ยืนยันจาก rd.go.th: ค่าเช่าที่ยังไม่ได้รับไม่ต้องนำมาคำนวณเป็นรายได้","1293/2531 ยืนยันได้จากแหล่งรองเท่านั้น"]],
+["หนังสือตอบข้อหารือ กค 0706/8823 ลิขสิทธิ์ภาพยนตร์","ok","ตรึง",["ผู้จัดจำหน่ายซื้อลิขสิทธิ์ภาพยนตร์ต่างประเทศ เป็นรายจ่ายฝ่ายทุน","เรื่องเดิมใช้วิธีหักค่าสึกหรอเดิมต่อไป เรื่องใหม่เลือกวิธีที่รับรองทั่วไป เช่น ยอดลดลง ได้โดยไม่ต้องขออนุมัติ แล้วใช้ตลอดไป (มาตรา 65 ทวิ (2) ประกอบ พ.ร.ฎ. ฉบับที่ 145 มาตรา 3 และ 4 (4))","ผลตรวจสองรอบอ่านข้อหารือนี้ต่างกัน ตรวจซ้ำก่อนพิมพ์"]],
+["หนังสือตอบข้อหารือ กค 0706/10178 สินทรัพย์ชีวภาพและผลิตผล","ok","แยก",["มาตรฐานการบัญชีฉบับที่ 57 เรื่องเกษตรกรรม (ขณะนั้น ปัจจุบัน TAS 41) วัดมูลค่ายุติธรรม","สินทรัพย์ชีวภาพ: ภาษีใช้ราคาทุน ส่วนที่ตีราคาเพิ่มไม่เป็นรายได้ ส่วนที่ลดลงหักไม่ได้ (มาตรา 65 ทวิ (3) และ 65 ตรี (17))","ผลิตผลที่เป็นสินค้าคงเหลือ: ราคาทุนหรือราคาตลาดที่ต่ำกว่า (มาตรา 65 ทวิ (6)) ส่วนที่ปรับลดแล้วหักซ้ำไม่ได้"]]];
+const Q=[
+["บริษัทที่ใช้ TFRS for NPAEs ต้องการนำมาตรฐานการรายงานทางการเงิน ฉบับที่ 16 เรื่อง สัญญาเช่า (TFRS 16) มาใช้",["ทำได้ถ้าผู้สอบบัญชียินยอม","ทำได้เฉพาะสัญญาเกิน 12 เดือน","ทำไม่ได้ เพราะ TFRS 16 ใช้กับกิจการที่มีส่วนได้เสียสาธารณะ (Publicly Accountable Entities: PAEs)","ทำได้ถ้าอธิบดีอนุมัติ"],2,"1.2","คำถาม-คำตอบของสภาวิชาชีพบัญชี อธิบดีไม่มีอำนาจเรื่องมาตรฐานบัญชี"],
+["ฐานทางกฎหมายของเกณฑ์สิทธิตามมาตรา 65",["พระราชบัญญัติการบัญชี พ.ศ. 2543","พระราชกำหนดแก้ไขเพิ่มเติมประมวลรัษฎากร (ฉบับที่ 13) พ.ศ. 2527","คำสั่งกรมสรรพากรที่ ท.ป. 1/2528","TFRS for NPAEs"],1,"1.3","คำพิพากษาศาลฎีกาที่ 1445/2541"],
+["ค่าตอบแทนกรรมการงานปี X1 อนุมัติเมษายน X2 หักได้ในปีใด",["X1","X2","เลือกได้","หักไม่ได้"],1,"1.3","คำพิพากษาศาลฎีกาที่ 3543/2542 จำนวนแน่นอนเมื่ออนุมัติ"],
+["รายการในข้อก่อนอยู่ชั้นใด",["ตาม","ตรึง","แยก","นอกกรอบ"],2,"1.4","ภาษีไม่ตามหลักการจับคู่ทางบัญชี"],
+["อำนาจประเมินดอกเบี้ยจากค่าหุ้นค้างชำระ",["มาตรา 65 ตรี (1)","มาตรา 65 ทวิ (4)","มาตรา 65 ทวิ (6)","มาตรา 71 (1)"],1,"1.3","มาตรา 65 ทวิ (4) ราคาตลาด"],
+["ธนาคารที่รับรู้รายได้ดอกเบี้ยตามวิธีในคำสั่ง ท.ป. 1/2528 ข้อ 3.1 ต้องการเปลี่ยนไปใช้วิธีอื่น",["เลิกได้ทันที","ต้องได้รับอนุมัติจากอธิบดี","ต้องได้รับความเห็นชอบจากสภาวิชาชีพบัญชี","ต้องแก้งบย้อนหลัง"],1,"1.4","มาตรา 65 วรรคสาม และคำสั่ง ท.ป. 1/2528 ข้อ 3 ชั้นตรึง"],
+["ผู้จัดจำหน่ายหักค่าสึกหรอลิขสิทธิ์ภาพยนตร์เรื่องเดิมแบบเส้นตรงมาตลอด ปีนี้ซื้อเรื่องใหม่และต้องการใช้วิธียอดลดลง ข้อใดถูกต้อง",["ต้องขออนุมัติอธิบดีก่อนใช้วิธียอดลดลงกับเรื่องใหม่","ใช้วิธียอดลดลงกับเรื่องใหม่ได้โดยไม่ต้องขออนุมัติ แล้วใช้วิธีนั้นตลอดไป (ตรึง)","ต้องใช้เส้นตรงกับทุกเรื่องเพราะกิจการเลือกวิธีไว้แล้ว","ต้องเปลี่ยนเรื่องเดิมเป็นวิธียอดลดลงด้วยเพื่อให้สม่ำเสมอ"],1,"1.4","หนังสือตอบข้อหารือ กค 0706/8823 มาตรา 65 ทวิ (2) ประกอบ พ.ร.ฎ. ฉบับที่ 145 มาตรา 3 และ 4 (4) ตรึงรายทรัพย์สิน ไม่ใช่ทั้งกิจการ"],
+["ผลิตผลเกษตรที่เก็บเกี่ยวแล้วและถือเป็นสินค้าคงเหลือ บัญชีวัดมูลค่ายุติธรรมหักต้นทุนในการขาย ทางภาษีใช้",["มูลค่ายุติธรรม","ราคาทุนหรือราคาตลาดที่ต่ำกว่า","ราคาทุนเสมอ","ราคาประเมินของทางราชการ"],1,"1.4","หนังสือตอบข้อหารือ กค 0706/10178 และมาตรา 65 ทวิ (6)"],
+["เปลี่ยนวิธีตีราคาสินค้าจากวิธีเข้าก่อนออกก่อน (First-In, First-Out: FIFO) เป็นถัวเฉลี่ย",["ทำได้ถ้าเปิดเผยในหมายเหตุ","ต้องได้รับอนุมัติจากอธิบดี","ทำได้เฉพาะ NPAEs","ห้ามเด็ดขาด"],1,"1.3","มาตรา 65 ทวิ (6) วรรคสอง"],
+["บริษัทเปลี่ยนจาก TFRS for NPAEs เป็น Full TFRS โดยไม่เปลี่ยนวิธีที่ถูกตรึงไว้",["ต้องขออนุมัติทุกกรณี","การเปลี่ยนกรอบไม่ต้องขออนุมัติ แต่ต้องตรวจทีละรายการ","ไม่มีผลทางภาษีเลย","ต้องยื่นแบบย้อนหลังทุกปี"],1,"1.4","ข้อสรุปเชิงวิเคราะห์จากหลัก 1.2 ไม่ใช่แนววินิจฉัย"],
+["ก่อนปี 2527 ศาลตีความ \"กิจการที่กระทำ\" ว่าหมายถึง",["รวมสิทธิเรียกร้อง","เงินได้ที่ได้รับมาแล้ว","เลือกตามบัญชี","เกณฑ์สิทธิเสมอ"],1,"1.5","คำพิพากษาศาลฎีกาที่ 4380/2531 (rd.go.th) และ 1293/2531 (แหล่งรอง)"],
+["Atwood, Drake & Myers (2010) พบว่าเมื่อบัญชีผูกกับภาษีแน่นขึ้น",["กำไรคงทนขึ้น","กำไรคงทนน้อยลงและพยากรณ์กระแสเงินสดได้แย่ลง","ไม่มีผล","ลดการเลี่ยงภาษีได้แน่นอน"],1,"1.5","Journal of Accounting and Economics 50(1): 111–125"],
+["ประเทศใดแยกบัญชีกับภาษีชัดเจน แต่ใช้กำไรตามงบเป็นฐานภาษีขั้นต่ำ",["สหราชอาณาจักร","เยอรมนี","สหรัฐฯ","ไทย"],2,"1.5","Schedule M-3 และภาษีขั้นต่ำทางเลือกสำหรับบริษัท (Corporate Alternative Minimum Tax: CAMT)"],
+["เหตุผลที่ดีที่สุดที่นักกฎหมายภาษีต้องอ่านงบการเงิน",["เพื่อทำบัญชีแทนลูกความ","การประเมินและข้อต่อสู้เริ่มจากตัวเลขบัญชี และต้องยกตั้งแต่ศาลชั้นต้น","กฎหมายบังคับ","เพื่อสอบบัญชี"],1,"1.1","คำพิพากษาศาลฎีกาที่ 1445/2541"],
+["ในตัวอย่าง 1.1 รายการปรับสุทธิ 150,000 บาทที่มีเฉพาะใต้เทรด (Full TFRS) เกิดจาก",["รายจ่ายต้องห้ามร่วม","ผลต่างระหว่าง TFRS 16 กับค่าเช่าที่จ่ายจริง","เบี้ยปรับ","ภาษีเงินได้รอการตัดบัญชี"],1,"1.4","1,350,000 − 1,200,000"],
+["ข้อโต้แย้งที่หนักแน่นที่สุดต่อการเขียนหลักการบัญชีที่รับรองทั่วไป (Generally Accepted Accounting Principles: GAAP) ไว้ในมาตรา 65",["นักบัญชีไม่รู้กฎหมาย","มาตรฐานวิชาชีพจะกลายเป็นกฎหมายภาษีโดยอ้อม และคุณภาพกำไรอาจลดลง","รัฐเก็บภาษีได้มากขึ้น","ศาลตีความมาตรฐานไม่ได้"],1,"1.5","Freedman (2004); Schön (2005); Atwood et al. (2010)"]];
+const FC=[["กำไรทางบัญชี","Accounting Profit: กำไรตามงบการเงินที่จัดทำตามมาตรฐาน"],["กำไรสุทธิทางภาษี","Taxable Profit: กำไรตามมาตรา 65 หลังปรับตามมาตรา 65 ทวิ และ 65 ตรี"],["เกณฑ์สิทธิ","Accrual Basis: รับรู้เมื่อเกิดสิทธิหรือหน้าที่ แม้ยังไม่รับหรือจ่ายเงิน"],["ความสอดคล้องระหว่างบัญชีกับภาษี (Book-Tax Conformity)","ระดับที่กำไรทางภาษีผูกกับกำไรทางบัญชี"],["PAEs","Publicly Accountable Entities: กิจการที่มีส่วนได้เสียสาธารณะ ใช้มาตรฐานการรายงานทางการเงิน ฉบับสมบูรณ์ (Full Thai Financial Reporting Standards: Full TFRS)"],["NPAEs","Non-Publicly Accountable Entities: กิจการที่ไม่มีส่วนได้เสียสาธารณะ ใช้ Thai Financial Reporting Standards for NPAEs (ปรับปรุง 2565)"],["ชั้นตาม","ภาษีรับตัวเลขหรือหลักการบัญชีที่รับรองทั่วไป"],["ชั้นตรึง","ยอมรับวิธีบัญชี แต่ต้องใช้ตลอดไปจนอธิบดีอนุมัติ"],["ชั้นแยก","ภาษีมีเกณฑ์ของตนเอง ไม่ขึ้นกับบัญชี"],["รายจ่ายต้องห้าม","รายจ่ายตามมาตรา 65 ตรี ที่หักในการคำนวณกำไรสุทธิไม่ได้"],["ผลแตกต่างชั่วคราว","Temporary Difference: ต่างเฉพาะจังหวะเวลา กลับรายการในอนาคต"],["ผลแตกต่างถาวร","Permanent Difference: ศัพท์เชิงวิเคราะห์ ไม่กลับรายการ ไม่ใช่ศัพท์ในมาตรฐานการบัญชี ฉบับที่ 12 เรื่อง ภาษีเงินได้ (Thai Accounting Standard 12: TAS 12)"],["ราคาตลาด","ฐานประเมินตามมาตรา 65 ทวิ (4) เมื่อไม่มีเหตุอันสมควร"],["Maßgeblichkeit","หลักเยอรมันที่ให้งบตามกฎหมายพาณิชย์เป็นฐานของงบภาษี ตามกฎหมายภาษีเงินได้ (Einkommensteuergesetz: EStG) §5 Abs.1"],["CTA 2009 มาตรา 46","Corporation Tax Act 2009: กฎหมายอังกฤษให้คำนวณกำไรจากการค้าตามแนวปฏิบัติทางบัญชีที่รับรองทั่วไป (Generally Accepted Accounting Practice)"],["GloBE","Global Anti-Base Erosion Rules: กฎภาษีขั้นต่ำระดับโลก เริ่มจากกำไรตามงบการเงินรวม ไทยใช้พระราชกำหนดภาษีส่วนเพิ่ม พ.ศ. 2567"]];
+let S={cls:{},quiz:{},seen:{}};
+try{const s=JSON.parse(localStorage.getItem("ch1app")||"null");if(s)S=Object.assign(S,s)}catch(e){}
+function save(){try{localStorage.setItem("ch1app",JSON.stringify(S))}catch(e){}prog()}
+const $=id=>document.getElementById(id),fmt=n=>n.toLocaleString("en-US");
+function show(id){document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.id===id));S.seen[id]=1;save();if(location.hash!=="#"+id)history.replaceState(null,"","#"+id)}
+$("nav").innerHTML=TABS.map(t=>`<button data-id="${t[0]}">${t[1]}</button>`).join("");
+$("nav").onclick=e=>{if(e.target.dataset.id)show(e.target.dataset.id)};
+function prog(){const done=TABS.slice(1).filter(t=>S.seen[t[0]]).length,c=Object.keys(S.cls).length,q=Object.keys(S.quiz).length;const p=Math.round((done/6*40)+(c/ITEMS.length*30)+(q/Q.length*30));$("prog").style.width=p+"%";$("progtxt").textContent=`${p}% · จำแนกแล้ว ${c}/${ITEMS.length} · ทำแบบทดสอบ ${q}/${Q.length}`}
+// classify
+function renderCls(){$("clsList").innerHTML=ITEMS.map((it,i)=>{const a=S.cls[i];return `<div class="card"><div>${i+1}. ${it[0]}</div><div class="row" style="margin-top:8px">${["F","K","D"].map(k=>`<button class="btn ${CL[k]}" data-i="${i}" data-k="${k}">${L[k]}</button>`).join("")}</div><div class="fb ${a?(a===it[1]?"good":"bad"):""}">${a?(a===it[1]?"ถูกต้อง: ":"ยังไม่ถูก คำตอบคือชั้น"+L[it[1]]+": ")+it[2]:""}</div></div>`}).join("");
+ const n=Object.keys(S.cls).length,r=Object.entries(S.cls).filter(([i,k])=>ITEMS[i][1]===k).length;$("clsScore").innerHTML=`<b>คะแนน</b> ถูก ${r} จาก ${n} ข้อที่ตอบ (ทั้งหมด ${ITEMS.length}) <button class="btn" id="clsReset">เริ่มใหม่</button>`;$("clsReset").onclick=()=>{S.cls={};save();renderCls()}}
+$("clsList").onclick=e=>{const b=e.target.closest("button");if(!b)return;S.cls[b.dataset.i]=b.dataset.k;save();renderCls()};
+// tree
+function tree(step,ans){const box=$("treeBox");if(step===0){box.innerHTML=`<p><b>คำถาม 1</b> รายการนี้มีบทภาษีเฉพาะกำหนดไว้หรือไม่ (เช่น มาตรา 65 ตรี หรือมาตรา 65 ทวิ (2) (4) (9))</p><div class="row"><button class="btn" id="t1y">ใช่</button><button class="btn" id="t1n">ไม่ใช่</button></div>`;$("t1y").onclick=()=>tree(9,"D");$("t1n").onclick=()=>tree(1)}
+ else if(step===1){box.innerHTML=`<p><b>คำถาม 2</b> ภาษียอมรับวิธีทางบัญชี แต่บังคับให้ใช้วิธีเดิมตลอดไปจนอธิบดีอนุมัติหรือไม่</p><div class="row"><button class="btn" id="t2y">ใช่</button><button class="btn" id="t2n">ไม่ใช่</button></div>`;$("t2y").onclick=()=>tree(9,"K");$("t2n").onclick=()=>tree(9,"F")}
+ else{const c={F:"var(--follow)",K:"var(--lock)",D:"var(--depart)"}[ans];const why={F:"ภาษีรับตัวเลขบัญชี ชุดมาตรฐานที่บริษัทใช้จึงมีผลต่อกำไรสุทธิทางภาษี",K:"ตรวจว่าเปลี่ยนวิธีหรือไม่ ถ้าเปลี่ยนต้องขออนุมัติอธิบดีก่อน",D:"กำไรสุทธิทางภาษีไม่ขึ้นกับชุดมาตรฐาน ต้องบวกกลับหรือหักตามบทเฉพาะ"}[ans];box.innerHTML=`<div class="layer" style="border-color:${c}"><b style="font-size:20px">ชั้น${L[ans]}</b><p>${why}</p></div><button class="btn" id="tAgain">เริ่มใหม่</button>`;$("tAgain").onclick=()=>tree(0)}}
+// bridge
+let co="N",ticks={};
+function renderBr(){const d=BR[co];$("bN").classList.toggle("primary",co==="N");$("bT").classList.toggle("primary",co==="T");
+ $("brList").innerHTML=`<table><tr><th>รายการ</th><th class="num">บาท</th></tr><tr><td>กำไรก่อนภาษีตามงบของ${d.name}</td><td class="num">${fmt(d.base)}</td></tr>`+d.items.map((it,i)=>`<tr><td><label><input type="checkbox" data-i="${i}" ${ticks[co+i]?"checked":""}> ${it[0]}</label></td><td class="num">${fmt(it[1])}</td></tr>`).join("")+`</table>`;
+ let run=d.base,bars=[["งบ",d.base,0,d.base]];d.items.forEach((it,i)=>{if(ticks[co+i]){bars.push([String(bars.length),it[1],run,run+it[1]]);run+=it[1]}});bars.push(["ภาษี",run,0,run]);
+ const lo=Math.min(7000000,...bars.map(b=>Math.min(b[2]||b[3],b[3]))),hi=Math.max(9000000,...bars.map(b=>Math.max(b[2],b[3]))),W=640,H=220,bw=Math.min(70,(W-60)/bars.length-12),Y=v=>H-24-(v-lo)/(hi-lo)*(H-50);
+ let g=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="การปรับปรุงกำไรสุทธิทางบัญชีเป็นกำไรสุทธิทางภาษีอากร"><line x1="40" x2="${W}" y1="${Y(8800000)}" y2="${Y(8800000)}" stroke="#F26B21" stroke-dasharray="4 4"/><text x="${W-4}" y="${Y(8800000)-4}" text-anchor="end" font-size="11" fill="#F26B21">เป้าหมาย 8,800,000</text>`;
+ bars.forEach((b,i)=>{const x=50+i*(bw+12),total=i===0||i===bars.length-1,y1=total?Y(b[3]):Y(Math.max(b[2],b[3])),y2=total?Y(lo):Y(Math.min(b[2],b[3])),col=total?"#5b6577":(b[1]>0?"#1f9d55":"#d64545");g+=`<rect x="${x}" y="${y1}" width="${bw}" height="${Math.max(2,y2-y1)}" fill="${col}" rx="3"/><text x="${x+bw/2}" y="${H-6}" text-anchor="middle" font-size="11" fill="#5b6577">${b[0]}</text>`});
+ $("brSvg").innerHTML=g+"</svg>";const fb=$("brFb"),ok=d.items.every((it,i)=>!!ticks[co+i]===!!it[2]);fb.className="fb "+(ok?"good":(run===8800000?"good":"bad"));fb.textContent=ok?`ถูกต้อง กำไรสุทธิทางภาษี ${fmt(run)} บาท รายการปรับปรุงสุทธิ ${fmt(run-d.base)} บาท`:`ตอนนี้ได้ ${fmt(run)} บาท ยังไม่ถึงหรือเกินเป้าหมาย ลองทบทวนว่ารายการใดถูกหักไปแล้วในงบ`}
+$("bN").onclick=()=>{co="N";renderBr()};$("bT").onclick=()=>{co="T";renderBr()};$("brList").onchange=e=>{ticks[co+e.target.dataset.i]=e.target.checked;renderBr()};
+// cases
+$("caseList").innerHTML=CASES.map((c,i)=>`<details class="card"><summary><b>${c[0]}</b> <span class="tag ${c[1]}">${c[1]==="ok"?"ยืนยันแล้ว":"รอตรวจ"}</span> <span class="tag">ชั้น${c[2]}</span></summary><ul>${c[3].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("");
+// quiz
+function renderQ(){$("quizBox").innerHTML=Q.map((q,i)=>{const a=S.quiz[i];return `<div class="card"><small class="q">ข้อ ${i+1} · LO${q[3]}</small><div>${q[0]}</div>${q[1].map((o,j)=>`<button class="btn opt ${a!==undefined?(j===q[2]?"right":(j===a?"wrong":"")):""}" data-i="${i}" data-j="${j}" ${a!==undefined?"disabled":""}>${"กขคง"[j]}. ${o}</button>`).join("")}<div class="fb ${a!==undefined?(a===q[2]?"good":"bad"):""}">${a!==undefined?(a===q[2]?"ถูกต้อง ":"คำตอบคือ "+"กขคง"[q[2]]+" ")+"· "+q[4]:""}</div></div>`}).join("");
+ const by={};Q.forEach((q,i)=>{by[q[3]]=by[q[3]]||[0,0];if(S.quiz[i]!==undefined){by[q[3]][1]++;if(S.quiz[i]===q[2])by[q[3]][0]++}});
+ $("quizSum").innerHTML=`<b>คะแนนราย LO</b><table>${Object.keys(by).sort().map(k=>`<tr><td>LO${k}</td><td class="num">${by[k][0]} / ${by[k][1]} ข้อที่ตอบ</td></tr>`).join("")}</table><button class="btn" id="qReset" style="margin-top:8px">ทำใหม่</button>`;$("qReset").onclick=()=>{S.quiz={};save();renderQ()}}
+$("quizBox").onclick=e=>{const b=e.target.closest("button");if(!b||b.disabled)return;S.quiz[b.dataset.i]=+b.dataset.j;save();renderQ()};
+// flashcards
+let deck=FC.map((_,i)=>i),side=0;
+function renderF(){const c=FC[deck[0]];$("flash").innerHTML=side?`<div><small class="q">${c[0]}</small><br>${c[1]}</div>`:`<b>${c[0]}</b>`;$("fCount").textContent=`เหลือ ${deck.length} ใบในรอบนี้`}
+$("flash").onclick=()=>{side=1-side;renderF()};$("fNo").onclick=()=>{const x=deck.shift();deck.splice(Math.min(2,deck.length),0,x);side=0;renderF()};$("fYes").onclick=()=>{const x=deck.shift();if(!deck.length)deck=FC.map((_,i)=>i);else deck.push(x);side=0;renderF()};
+renderCls();tree(0);renderBr();renderQ();renderF();
+const start=(location.hash||"#home").slice(1);show(TABS.some(t=>t[0]===start)?start:"home");
+window.addEventListener("hashchange",()=>{const h=location.hash.slice(1);if(TABS.some(t=>t[0]===h))show(h)});
+</script>
+</body>
+</html>
