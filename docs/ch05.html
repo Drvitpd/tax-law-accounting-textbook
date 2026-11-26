@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แอปบทที่ 5 งบการเงินและการอ่านงบสำหรับนักกฎหมาย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ok:#1f9d55;--warn:#d4a017;--bad:#d64545;--ink:#1d2433;--quiet:#5b6577;--line:#d9dde5;--bg:#fff8f3;--card:#fff;--accent:#F26B21;--accent-soft:#fde8dc;--brand:#1C2230}
+*{box-sizing:border-box}
+body{margin:0;font-family:Sarabun,system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55}
+header{background:#fff;color:var(--brand);padding:14px 20px;border-bottom:5px solid var(--accent);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.logo{height:38px;width:auto}.tax{background:var(--accent);color:#fff;font-weight:700;letter-spacing:3px;padding:4px 12px;border-radius:6px;font-size:18px}.htxt{flex:1 1 260px}
+header h1{margin:0;font-size:19px;font-weight:700}header p{margin:2px 0 0;font-size:13px;color:var(--quiet)}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}nav button:hover{border-color:var(--accent)}
+main{max-width:860px;margin:0 auto;padding:18px 14px 60px}
+section{display:none}section.on{display:block}
+h2{font-size:20px;margin:6px 0 4px;color:var(--accent)}
+.lead{color:var(--quiet);margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent-soft);border-radius:12px;padding:14px 16px;margin:10px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);color:var(--quiet)}
+.tag.ok{border-color:var(--ok);color:var(--ok)}.tag.wait{border-color:var(--warn);color:#9a7408}.tag.bad{border-color:var(--bad);color:var(--bad)}
+.fb{margin-top:8px;padding:8px 10px;border-radius:8px;font-size:14px;display:none}
+.fb.good{display:block;background:#e7f6ec;color:#155d35}.fb.bad{display:block;background:#fbe9e9;color:#8a2626}.fb.info{display:block;background:#fff4e6;color:#7a4a0c}
+.progress{height:8px;background:var(--line);border-radius:4px;overflow:hidden}.progress div{height:100%;background:var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.abbr td:first-child{font-weight:700;white-space:nowrap;color:var(--accent)}
+label.f{display:block;margin:6px 0 2px;font-size:14px;color:var(--quiet)}
+input[type=number]{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;font:inherit;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.flash{min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:20px;cursor:pointer;user-select:none}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.right{background:#e7f6ec;border-color:var(--ok)}.opt.wrong{background:#fbe9e9;border-color:var(--bad)}
+small.q{color:var(--quiet)}
+select{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;max-width:100%}
+</style>
+<style>header img.logo{height:52px;width:auto;max-width:100%}@media (max-width:480px){header img.logo{height:40px}}.atx-nav{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.9rem;margin:0 0 6px}.atx-nav a{color:var(--accent,#F26B21);font-weight:700;text-decoration:none}.atx-nav a:hover{text-decoration:underline}</style>
+<script src="gate.js"></script>
+</head>
+<body>
+<header><img class="logo" src="brand/logo.png" alt="Dr.VIT & PD | TaxBiz Clear"><div class="htxt"><h1>แอปประจำบทที่ 5 · งบการเงินและการอ่านงบสำหรับนักกฎหมาย</h1><p>ตำรา การบัญชีสำหรับนักกฎหมายภาษีอากร · สถานะกฎหมาย ณ 24 พ.ย. 2569 · ตัวเลขในแอปเป็นตัวอย่างสมมติของบริษัท ใบตองสยาม จำกัด</p></div></header>
+<nav id="nav"></nav>
+<main>
+<div class="atx-nav" role="navigation" aria-label="นำทาง"><a href="./">สารบัญแอปประจำเล่ม</a> · <a href="ch02.html">บทที่ 2</a></div>
+<section id="home">
+<h2>เริ่มต้น</h2><p class="lead">ใช้หลังอ่านบทจบ ทำครบหกกิจกรรมแล้วจะอ่านงบได้ว่าบรรทัดใดเป็นพยาน บรรทัดใดเป็นเพียงสัญญาณให้ขอเอกสารเพิ่ม</p>
+<div class="card"><b>ความคืบหน้า</b><div class="progress" style="margin-top:8px"><div id="prog" style="width:0"></div></div><small class="q" id="progtxt"></small></div>
+<div class="card"><b>ผลลัพธ์การเรียนรู้ (Learning Outcomes: LO)</b><ol style="margin:6px 0 0 18px;padding:0">
+<li>LO5.1 อธิบายชุดงบการเงินที่ต้องจัดทำและยื่นตามกฎหมายบัญชีและประมวลรัษฎากร แยกกิจการที่ใช้ Full TFRS กับ TFRS for NPAEs (เข้าใจ)</li>
+<li>LO5.2 กระทบยอดรายได้ตามงบกับ ภ.พ.30 และกำไรตามงบกับ ภ.ง.ด.50 พร้อมระบุรายการที่ต้องขอพยานเพิ่ม (ประยุกต์ใช้)</li>
+<li>LO5.3 วิเคราะห์อัตราส่วนทางการเงินเพื่อชี้จุดเสี่ยงทางภาษี และเลือกเอกสารที่ต้องขอเพิ่ม (วิเคราะห์)</li>
+<li>LO5.4 ประเมินน้ำหนักของงบการเงินและรายงานผู้สอบบัญชีในคดีภาษี (ประเมินค่า)</li>
+<li>LO5.5 วิเคราะห์ผลของ TFRS 18 และร่างหลักเกณฑ์ของ ก.ล.ต. ต่อการอ่านงบเพื่อการตรวจภาษี (วิเคราะห์)</li></ol></div>
+<div class="card"><b>คำย่อที่ใช้ในแอป</b><table class="abbr">
+<tr><td>Full TFRS</td><td>มาตรฐานการรายงานทางการเงิน ฉบับสมบูรณ์ (Full Thai Financial Reporting Standards) ใช้กับกิจการที่มีส่วนได้เสียสาธารณะ (PAEs)</td></tr>
+<tr><td>TFRS for NPAEs</td><td>มาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียสาธารณะ (Non-Publicly Accountable Entities)</td></tr>
+<tr><td>TFRS 18</td><td>มาตรฐานการรายงานทางการเงิน ฉบับที่ 18 เรื่อง การนำเสนอและการเปิดเผยข้อมูลในงบการเงิน</td></tr>
+<tr><td>ก.ล.ต.</td><td>สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์</td></tr>
+<tr><td>TA</td><td>ผู้สอบบัญชีภาษีอากร (Tax Auditor) ตามประมวลรัษฎากร มาตรา 3 สัตต</td></tr>
+<tr><td>ภ.พ.30</td><td>แบบแสดงรายการภาษีมูลค่าเพิ่ม</td></tr>
+<tr><td>ภ.ง.ด.50</td><td>แบบแสดงรายการภาษีเงินได้นิติบุคคล</td></tr>
+<tr><td>ETR</td><td>อัตราภาษีที่แท้จริง (Effective Tax Rate) คือค่าใช้จ่ายภาษีเงินได้หารด้วยกำไรก่อนภาษี</td></tr>
+<tr><td>KAM</td><td>เรื่องสำคัญในการตรวจสอบ (Key Audit Matters)</td></tr>
+<tr><td>IRAC</td><td>ประเด็น หลักกฎหมาย ปรับใช้ สรุป (Issue, Rule, Application, Conclusion)</td></tr>
+<tr><td>ท.ป.</td><td>คำสั่งกรมสรรพากรที่ออกโดยอาศัยอำนาจตามตัวบท</td></tr>
+</table></div>
+</section>
+<section id="recon"><h2>1. กระทบยอดรายได้ตามงบกับ ภ.พ.30</h2><p class="lead">ค่าเริ่มต้นคือใบตองสยามในตัวอย่าง 5.1 ปรับตัวเลขเพื่อทดลองกรณีอื่น</p>
+<div class="card"><div class="grid">
+<div><label class="f">รายได้รวมตามงบกำไรขาดทุน (บาท)</label><input type="number" id="rTot" value="80000000"></div>
+<div><label class="f">เงินปันผลรับ (บาท)</label><input type="number" id="rDiv" value="1500000"></div>
+<div><label class="f">รายได้อื่นที่ไม่ใช่การขาย เช่น กำไรจากอัตราแลกเปลี่ยน ดอกเบี้ยรับ (บาท)</label><input type="number" id="rOth" value="500000"></div>
+<div><label class="f">ยอดขายรวม 12 เดือนใน ภ.พ.30 (บาท)</label><input type="number" id="rVat" value="76500000"></div>
+<div><label class="f">อัตราภาษีมูลค่าเพิ่มที่สมมติ (%)</label><input type="number" id="rRate" value="7" step="0.1"></div>
+</div><div id="rOut" style="margin-top:12px"></div><div class="fb" id="rFb"></div></div></section>
+<section id="loan"><h2>2. เงินให้กู้ยืมกรรมการโดยไม่คิดดอกเบี้ย</h2><p class="lead">มาตรา 65 ทวิ (4) ให้เจ้าพนักงานประเมินดอกเบี้ยตามราคาตลาดเมื่อไม่มีเหตุอันสมควร ค่าเริ่มต้นคือตัวอย่าง 5.2</p>
+<div class="card"><div class="grid">
+<div><label class="f">เงินให้กู้ยืม (บาท)</label><input type="number" id="lP" value="3000000"></div>
+<div><label class="f">อัตราดอกเบี้ยตามราคาตลาด (% ต่อปี)</label><input type="number" id="lR" value="5" step="0.1"></div>
+<div><label class="f">จำนวนเดือนในรอบบัญชี</label><input type="number" id="lM" value="12"></div>
+<div><label class="f">ดอกเบี้ยที่บันทึกในงบ (บาท)</label><input type="number" id="lB" value="0"></div>
+</div><div id="lOut" style="margin-top:12px"></div><div class="fb" id="lFb"></div></div></section>
+<section id="ratio"><h2>3. อัตราส่วนชี้ความเสี่ยงทางภาษี</h2><p class="lead">อัตราส่วนไม่ใช่พยานว่ามีการหนีภาษีอากร บอกเพียงว่าควรขอเอกสารอะไรเพิ่ม ค่าเริ่มต้นคือตัวอย่าง 5.3</p>
+<div class="card"><div class="grid">
+<div><label class="f">รายได้จากการขาย ปีก่อน (บาท)</label><input type="number" id="aS1" value="70000000"></div>
+<div><label class="f">ต้นทุนขาย ปีก่อน (บาท)</label><input type="number" id="aC1" value="52500000"></div>
+<div><label class="f">สินค้าคงเหลือปลายปี ปีก่อน (บาท)</label><input type="number" id="aI1" value="6000000"></div>
+<div><label class="f">รายได้จากการขาย ปีนี้ (บาท)</label><input type="number" id="aS2" value="78000000"></div>
+<div><label class="f">ต้นทุนขาย ปีนี้ (บาท)</label><input type="number" id="aC2" value="60840000"></div>
+<div><label class="f">สินค้าคงเหลือปลายปี ปีนี้ (บาท)</label><input type="number" id="aI2" value="9000000"></div>
+</div><div id="aOut" style="margin-top:12px"></div><div class="fb" id="aFb"></div></div></section>
+<section id="audit"><h2>4. อ่านรายงานผู้สอบบัญชี</h2><p class="lead">เลือกสิ่งที่พบในรายงาน แอปจะบอกชื่อทางการตามมาตรฐานการสอบบัญชีและสิ่งที่นักกฎหมายภาษีควรทำต่อ (หัวข้อ 5.5)</p>
+<div class="card"><select id="opSel"></select><div id="opOut" style="margin-top:10px"></div></div></section>
+<section id="cases"><h2>5. คดีและหลักที่สกัดได้</h2><p class="lead">จัดกลุ่มตามตัวแปรชี้ขาด แตะเพื่อดูรายละเอียด ป้ายบอกว่าตรวจจากแหล่งใดแล้ว</p><div id="caseList"></div></section>
+<section id="quiz"><h2>6. แบบทดสอบ 10 ข้อ</h2><p class="lead">ข้อเดียวกับปรนัยท้ายบท ควรทำในเล่มให้ครบก่อน ตอบแล้วเห็นเหตุผลทันที สรุปคะแนนราย LO อยู่ท้ายสุด</p><div id="quizBox"></div><div class="card" id="quizSum"></div></section>
+<section id="cards"><h2>7. การ์ดศัพท์</h2><p class="lead">แตะการ์ดเพื่อพลิก กด "ยังจำไม่ได้" เพื่อให้คำนั้นกลับมาเร็วขึ้น</p>
+<div class="card flash" id="flash"></div><div class="row"><button class="btn" id="fNo">ยังจำไม่ได้</button><button class="btn primary" id="fYes">จำได้แล้ว</button><small class="q" id="fCount"></small></div></section>
+<p style="font-size:12px;color:var(--quiet);margin-top:30px">เนื้อหาเป็นการถอดความของคณะผู้เขียน ไม่ใช่ถ้อยคำของตัวบทหรือมาตรฐาน คำพิพากษาที่ติดป้าย "รอฉบับเต็ม" สรุปจากฉบับย่อบน rd.go.th</p>
+</main>
+<script>
+const TABS=[["home","เริ่มต้น"],["recon","กระทบยอด ภ.พ.30"],["loan","เงินกู้กรรมการ"],["ratio","อัตราส่วน"],["audit","รายงานผู้สอบบัญชี"],["cases","คดี"],["quiz","แบบทดสอบ"],["cards","การ์ดศัพท์"]];
+const OPS=[
+["การแสดงความเห็นอย่างไม่มีเงื่อนไข","มาตรฐานการสอบบัญชี รหัส 700 (ปรับปรุง) ย่อหน้า 25","ยังต้องตรวจหลักฐานรายจ่ายที่มีความเสี่ยงทางภาษี เพราะความเห็นผูกกับสาระสำคัญทางบัญชี ไม่ใช่เกณฑ์หลักฐานทางภาษี (หลัก 5.2 คำพิพากษาศาลฎีกาที่ 3936/2548)"],
+["การแสดงความเห็นอย่างมีเงื่อนไข","มาตรฐานการสอบบัญชี รหัส 705 (ปรับปรุง) ย่อหน้า 7 ผลกระทบมีสาระสำคัญแต่ไม่แผ่กระจาย","อ่านเหตุแห่งเงื่อนไขและตามรายการนั้นไปที่ ภ.ง.ด.50 เช่น สินค้าคงเหลือที่ผู้สอบบัญชีสังเกตการตรวจนับไม่ได้"],
+["การแสดงความเห็นว่างบการเงินไม่ถูกต้อง","มาตรฐานการสอบบัญชี รหัส 705 (ปรับปรุง) ย่อหน้า 8 ผลกระทบมีสาระสำคัญและแผ่กระจาย","ผู้เสียภาษีอ้างงบเป็นพยานสนับสนุนตนได้น้อยมาก ควรอ่านว่ารายการใดทำให้ผลกระทบแผ่กระจาย แล้วเตรียมพยานต้นทางของรายการนั้น"],
+["การไม่แสดงความเห็น","มาตรฐานการสอบบัญชี รหัส 705 (ปรับปรุง) ย่อหน้า 9–10","งบมีน้ำหนักน้อยมากในการพิสูจน์ฝ่ายผู้เสียภาษี ควรเตรียมพยานเอกสารต้นทางทั้งหมด"],
+["ความไม่แน่นอนที่มีสาระสำคัญที่เกี่ยวข้องกับการดำเนินงานต่อเนื่อง","มาตรฐานการสอบบัญชี รหัส 570 (ปรับปรุง)","หนี้ภาษีที่จะถูกประเมินอาจเก็บได้ยาก ผู้ซื้อกิจการต้องตรวจภาษีค้างและกำหนดข้อรับประกันเรื่องภาษีในสัญญา"],
+["เรื่องสำคัญในการตรวจสอบที่เกี่ยวกับภาษี","มาตรฐานการสอบบัญชี รหัส 701","ผู้สอบบัญชีเห็นว่าประมาณการภาษีเป็นจุดตัดสินใจที่มีความเสี่ยง ควรขอดูข้อสมมติฐานของฝ่ายบริหาร"],
+["วรรคเน้นข้อมูลและเหตุการณ์ เช่น คดีภาษีที่ค้างอยู่","มาตรฐานการสอบบัญชี รหัส 706 (ปรับปรุง)","อ่านหมายเหตุที่ผู้สอบบัญชีชี้ไป เพราะบอกข้อพิพาทและจำนวนเงินที่ฝ่ายบริหารประเมินไว้"]];
+const CASES=[
+["คำพิพากษาศาลฎีกาที่ 3936/2548 (มติที่ประชุมใหญ่) บริษัท ไทย-เอ็มซี จำกัด","ok","หลัก 5.2 งบไม่พอเป็นพยานที่เป็นคุณ",["ประเด็น: งบที่ผู้สอบบัญชีในญี่ปุ่นรับรอง ผ่านการตรวจของกรมสรรพากรญี่ปุ่น และมีโนตารีปับลิกรับรอง พอพิสูจน์ค่ารับรองและดอกเบี้ยที่เจ้าพนักงานโต้แย้งหรือไม่","หลัก: มาตรา 65 ทวิ (1) ประกอบมาตรา 65 ตรี (9) และ (14) (ตามฉบับย่อ รอเทียบฉบับเต็ม)","ปรับใช้: เมื่อไม่มีหลักฐานการจ่าย งบที่รับรองแล้วก็ยังฟังไม่ได้ว่ามีการจ่ายจริง","สรุป: เป็นรายจ่ายต้องห้าม ประเด็นหลักอีกข้อคือผู้ทำการแทนตามมาตรา 76 ทวิ และการจำหน่ายเงินกำไรออกนอกประเทศตามมาตรา 70 ทวิ (บทที่ 16)"]],
+["คำพิพากษาศาลฎีกาที่ 135/2550","ok","หลัก 5.1 งบใช้ยันผู้จัดทำได้",["ศาลภาษีอากรกลางเห็นว่าข้ออ้างของโจทก์ขัดกับรายการในงบ","ศาลฎีกาเห็นว่าการลงรายการปีหลังทำให้พยานโจทก์มีน้ำหนักน้อยกว่าพยานจำเลย","โจทก์อ้างมาตรฐานการบัญชีมาลบล้างมาตรา 65 ตรี (5) ไม่ได้"]],
+["คำพิพากษาศาลฎีกาที่ 3143/2536","wait","หมายเหตุในงบบอกสิทธิที่เกิดขึ้นแล้ว",["ศาลใช้หมายเหตุในงบกำไรขาดทุนประกอบการวินิจฉัยว่ามีเงินได้ตามเกณฑ์สิทธิ","สรุปจากฉบับย่อบน rd.go.th รอฉบับเต็ม"]],
+["คำพิพากษาศาลฎีกาที่ 8829/2550, 1001/2544","ok","หลัก 5.3 ไม่มีงบให้ตรวจ",["ไม่ยื่นงบหรือไม่ส่งบัญชีตามหมายเรียก เจ้าพนักงานประเมินร้อยละ 5 ของรายรับตามมาตรา 71 (1) ได้"]],
+["คำพิพากษาศาลฎีกาที่ 31/2550","ok","หลัก 5.3 ข้อจำกัด",["ถ้าเจ้าพนักงานมีพยานพอคำนวณกำไรสุทธิได้ การประเมินตามมาตรา 71 (1) ไม่ชอบ ต้องคำนวณตามมาตรา 65"]],
+["คำพิพากษาศาลฎีกาที่ 7939/2542 บริษัทโฟร์โก อินเตอร์เนชั่นแนล จำกัด","ok","หลัก 5.4 ภาระนำสืบยอดในคดีเรียกภาษี",["ประเด็น: เมื่อจำเลยไม่อุทธรณ์การประเมิน ศาลปรับยอดรายรับที่ใช้ประเมินได้หรือไม่","หลัก: ประมวลรัษฎากร มาตรา 12, 30 และ 71 (1) ประกอบ ป.วิ.พ. มาตรา 84","ปรับใช้: เจ้าพนักงานประเมินจากรายรับ 234,333,578 บาท แต่พยานของกรมสรรพากรฟังได้เพียง 222,404,146.96 บาท","สรุป: ศาลปรับยอดและแก้การประเมินได้ ศาลฎีกาพิพากษายืน"]],
+["คำพิพากษาศาลฎีกาที่ 7682/2546 บริษัท สรรพสินค้าเซ็นทรัล จำกัด","wait","จุดที่แนวยังไม่ชัด",["สมุดบัญชีและเอกสารถูกเพลิงไหม้ เจ้าพนักงานประเมินโดยเทียบเคียง","ปี 2534 โจทก์ยินยอมวิธีคำนวณ การประเมินจึงชอบ ปี 2535 วิธีเทียบเคียงไม่เป็นธรรมและเจ้าพนักงานเลื่อนการตรวจนานกว่าหนึ่งปี จึงหักค่าโฆษณาและส่งเสริมการขายได้ทั้งจำนวน","ไม่ใช่หลักทั่วไปเรื่องเหตุสุดวิสัย (ฉบับย่อมีประโยคที่ขัดกับผลคดี รอฉบับเต็ม)"]]];
+const Q=[
+["บริษัทจำกัดที่ใช้ TFRS for NPAEs จัดทำงบตามแบบใดของประกาศกรมพัฒนาธุรกิจการค้า พ.ศ. 2566",["แบบ 1","แบบ 2","แบบ 3","แบบ 4"],1,"5.1","ประกาศแบ่งแบบงบตามรูปแบบกิจการ บริษัทจำกัดที่ใช้ TFRS for NPAEs ใช้แบบ 2 (หัวข้อ 5.2.1)"],
+["ตามประกาศกรมสรรพากรลงวันที่ 23 สิงหาคม 2567 งบกำไรขาดทุนเบ็ดเสร็จถือเป็นบัญชีใดตามมาตรา 68 ทวิ",["บัญชีงบดุล","บัญชีทำการ","บัญชีกำไรขาดทุน","ไม่ถือเป็นบัญชีใด"],2,"5.1","ประกาศเทียบงบกำไรขาดทุนหรืองบกำไรขาดทุนเบ็ดเสร็จเป็นบัญชีกำไรขาดทุน และงบฐานะการเงินเป็นบัญชีงบดุล (หัวข้อ 5.2.2)"],
+["ข้อใดถูกต้องเกี่ยวกับ \"บัญชีทำการ\" ตามประกาศกรมสรรพากรปี 2567",["ให้งบกระแสเงินสดเป็นบัญชีทำการ","ให้หมายเหตุต้นทุนขายเป็นบัญชีทำการ","ไม่ได้กำหนดงบใดเป็นบัญชีทำการ","ให้งบกำไรขาดทุนเป็นบัญชีทำการ"],2,"5.1","คำว่าบัญชีทำการอยู่ในชื่อเรื่องของประกาศ แต่ไม่มีข้อใดกำหนดว่างบใดเป็นบัญชีทำการ (ข้อสังเกตของผู้เขียนในหัวข้อ 5.2.2)"],
+["รายได้รวมตามงบ 60,000,000 บาท รวมเงินปันผลรับ 800,000 บาท ยอดขายใน ภ.พ.30 ทั้งปี 58,200,000 บาท ผลต่างที่ยังต้องอธิบายเท่ากับเท่าใด",["800,000 บาท","1,000,000 บาท","1,800,000 บาท","2,600,000 บาท"],1,"5.2","60,000,000 − 800,000 − 58,200,000 = 1,000,000 บาท เงินปันผลรับไม่ใช่การขายสินค้าหรือให้บริการจึงหักออกก่อน"],
+["บริษัทส่งมอบสินค้าวันที่ 29 ธันวาคม แต่ออกใบกำกับภาษีและรับเงินในเดือนมกราคม ภาษีขายต้องอยู่ใน ภ.พ.30 เดือนใด",["ธันวาคม เดือนที่ส่งมอบสินค้า","มกราคม เดือนที่ออกใบกำกับภาษี","มกราคม เดือนที่รับชำระเงิน","เดือนใดก็ได้ที่บริษัทเลือก"],0,"5.2","มาตรา 78 (1) ให้ความรับผิดเกิดเมื่อส่งมอบสินค้า เว้นแต่ได้โอนกรรมสิทธิ์ รับชำระราคา หรือออกใบกำกับภาษีก่อนส่งมอบ"],
+["อัตรากำไรขั้นต้นลดลงและจำนวนวันสินค้าคงเหลือเพิ่มขึ้นพร้อมกัน เอกสารชุดใดควรขอเป็นอันดับแรก",["ใบกำกับภาษีซื้อและรายงานสินค้า","สัญญาเงินกู้และตารางผ่อนชำระ","ทะเบียนผู้ถือหุ้นและมติจ่ายปันผล","ทะเบียนทรัพย์สินและค่าเสื่อมราคา"],0,"5.3","สองสัญญาณนี้ชี้ไปที่ต้นทุนขายและสินค้า ใบกำกับภาษีซื้อและรายงานสินค้าใช้ตรวจว่าต้นทุนสูงเกินจริงหรือขายไม่บันทึก"],
+["งบฐานะการเงินมีเงินให้กู้ยืมกรรมการ แต่งบกำไรขาดทุนไม่มีดอกเบี้ยรับ บทบัญญัติใดให้อำนาจประเมินตามราคาตลาด",["มาตรา 65 ตรี (1)","มาตรา 65 ทวิ (4)","มาตรา 65 ทวิ (6)","มาตรา 71 (1)"],1,"5.3","มาตรา 65 ทวิ (4) ให้ประเมินตามราคาตลาดเมื่อให้กู้ยืมโดยไม่มีดอกเบี้ยหรือดอกเบี้ยต่ำกว่าราคาตลาดโดยไม่มีเหตุอันสมควร"],
+["ผู้เสียภาษีอ้างรายจ่ายที่ถูกโต้แย้งโดยมีเพียงงบที่ผู้สอบบัญชีรับรอง ตามคำพิพากษาศาลฎีกาที่ 3936/2548 ผลคือข้อใด",["หักได้ เพราะงบที่รับรองแล้วเป็นพยานเด็ดขาด","หักได้ครึ่งหนึ่ง เพราะพยานของสองฝ่ายหักล้างกัน","หักไม่ได้ เพราะต้องมีหลักฐานการจ่ายประกอบ","หักไม่ได้ เพราะผู้สอบบัญชีอยู่ต่างประเทศ"],2,"5.4","ศาลฎีกาโดยมติที่ประชุมใหญ่เห็นว่าเมื่อไม่มีหลักฐานการจ่าย งบที่รับรองแล้วยังฟังไม่ได้ว่าจ่ายจริง เหตุไม่ได้อยู่ที่สัญชาติของผู้สอบบัญชี"],
+["บริษัทไม่ส่งบัญชีบางเดือน แต่เจ้าพนักงานมีพยานเพียงพอคำนวณกำไรสุทธิได้ การประเมินตามมาตรา 71 (1) ชอบหรือไม่",["ชอบ เพราะไม่ส่งบัญชีเพียงบางเดือนก็พอ","ชอบ ถ้าเจ้าพนักงานเลือกใช้เอง","ไม่ชอบ ต้องคำนวณตามมาตรา 65","ไม่ชอบ ต้องงดการประเมินทั้งหมด"],2,"5.4","คำพิพากษาศาลฎีกาที่ 31/2550 เมื่อมีพยานพอคำนวณกำไรสุทธิได้ ต้องคำนวณตามมาตรา 65"],
+["เมื่อใบตองโฮลดิ้งย้ายดอกเบี้ยรับไปหมวดลงทุนตาม TFRS 18 ผลต่อกำไรสุทธิตามมาตรา 65 คือข้อใด",["กำไรสุทธิเพิ่มขึ้นเท่าดอกเบี้ยที่ย้ายหมวด","กำไรสุทธิลดลงเท่าดอกเบี้ยที่ย้ายหมวด","กำไรสุทธิไม่เปลี่ยนเพราะการย้ายหมวด","ดอกเบี้ยรับกลายเป็นเงินได้ที่ได้รับยกเว้น"],2,"5.5","TFRS 18 เปลี่ยนการจัดหมวดในงบกำไรขาดทุน ไม่เปลี่ยนรายได้หรือรายจ่ายตามประมวลรัษฎากร จึงจัดอยู่ในชั้นแยก"]];
+const FC=[["งบฐานะการเงิน","Statement of Financial Position · ถือเป็นบัญชีงบดุลตามมาตรา 68 ทวิ"],["บัญชีทำการ","Working Account · ถ้อยคำในมาตรา 68 ทวิ ที่ประกาศกรมสรรพากร 2567 ไม่ได้กำหนดงบที่เทียบเท่า"],["เรื่องสำคัญในการตรวจสอบ","Key Audit Matters: KAM · เรื่องที่ผู้สอบบัญชีเห็นว่าสำคัญที่สุดในการตรวจงบงวดนั้น"],["การแสดงความเห็นอย่างมีเงื่อนไข","Qualified Opinion · ผลกระทบมีสาระสำคัญแต่ไม่แผ่กระจาย (รหัส 705 ย่อหน้า 7)"],["การแสดงความเห็นว่างบการเงินไม่ถูกต้อง","Adverse Opinion · ผลกระทบมีสาระสำคัญและแผ่กระจาย (รหัส 705 ย่อหน้า 8)"],["ผลรวมย่อยที่กำหนด","Required Subtotals · บรรทัดกำไรที่ TFRS 18 บังคับให้แสดง"],["ตัววัดผลการดำเนินงานที่ผู้บริหารกำหนด","Management-defined Performance Measures: MPMs · ต้องกระทบยอดในหมายเหตุ"],["อัตราภาษีที่แท้จริง","Effective Tax Rate: ETR · ค่าใช้จ่ายภาษีเงินได้ ÷ กำไรก่อนภาษี"],["การบริหารความเสี่ยงด้านการปฏิบัติตามกฎหมาย","Compliance Risk Management: CRM · วิธีที่กรมสรรพากรใช้จัดลำดับความเสี่ยงของผู้เสียภาษี"],["ตารางกระทบยอดมาตรฐาน","Schedule M-3 · แบบกระทบยอดกำไรตามงบกับกำไรทางภาษีของสหรัฐอเมริกา"],["ผู้สอบบัญชีภาษีอากร","Tax Auditor: TA · ผู้ได้รับอนุญาตจากอธิบดีตามมาตรา 3 สัตต"]];
+let S={seen:{},quiz:{},fc:{}};try{const x=JSON.parse(localStorage.getItem("ch5app"));if(x)S=Object.assign(S,x)}catch(e){}
+function save(){try{localStorage.setItem("ch5app",JSON.stringify(S))}catch(e){}prog()}
+const $=id=>document.getElementById(id),fmt=n=>Math.round(n).toLocaleString("en-US"),v=id=>Math.max(0,+$(id).value||0),pct=x=>(x*100).toFixed(1)+"%";
+function show(id){document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.id===id));S.seen[id]=1;save();if(location.hash!=="#"+id)history.replaceState(null,"","#"+id)}
+$("nav").innerHTML=TABS.map(t=>`<button data-id="${t[0]}">${t[1]}</button>`).join("");
+$("nav").onclick=e=>{if(e.target.dataset.id)show(e.target.dataset.id)};
+function prog(){const done=TABS.slice(1).filter(t=>S.seen[t[0]]).length,q=Object.keys(S.quiz).length;const p=Math.round(done/7*60+q/Q.length*40);$("prog").style.width=p+"%";$("progtxt").textContent=`${p}% · เปิดกิจกรรมแล้ว ${done}/7 · ทำแบบทดสอบ ${q}/${Q.length}`}
+function recon(){const tot=v("rTot"),dv=v("rDiv"),oth=v("rOth"),vat=v("rVat"),rt=v("rRate")/100,sales=tot-dv-oth,gap=sales-vat;
+ $("rOut").innerHTML=`<table><tr><th>รายการ</th><th class="num">บาท</th></tr><tr><td>รายได้รวมตามงบกำไรขาดทุน</td><td class="num">${fmt(tot)}</td></tr><tr><td>หัก เงินปันผลรับ (ไม่ใช่การขายสินค้าหรือให้บริการ)</td><td class="num">(${fmt(dv)})</td></tr><tr><td>หัก รายได้อื่นที่ไม่ใช่การขาย</td><td class="num">(${fmt(oth)})</td></tr><tr><td>รายได้จากการขายตามงบ</td><td class="num">${fmt(sales)}</td></tr><tr><td>ยอดขายรวม 12 เดือนใน ภ.พ.30</td><td class="num">${fmt(vat)}</td></tr><tr><td><b>ผลต่างที่ยังต้องอธิบาย</b></td><td class="num"><b>${fmt(gap)}</b></td></tr><tr><td>ภาษีมูลค่าเพิ่มที่เกี่ยวข้อง</td><td class="num">${fmt(Math.abs(gap)*rt)}</td></tr></table>`;
+ const def=tot===8e7&&dv===15e5&&oth===5e5&&vat===765e5&&rt===0.07,f=$("rFb");
+ f.className="fb "+(def?"good":"info");f.textContent=def?"ตรงกับตัวอย่าง 5.1: ผลต่าง 1,500,000 บาท ภาษี 105,000 บาท ถ้าส่งมอบจริงในเดือนธันวาคม ภาษีต้องอยู่ใน ภ.พ.30 เดือนธันวาคมตามมาตรา 78 (1) พยานที่ต้องขอคือใบส่งของที่ลูกค้าลงนามรับและรายงานสินค้าออกจากคลัง":(gap>0?"ยอดขายตามงบสูงกว่า ภ.พ.30 ให้ถามว่าส่งมอบเมื่อใด และขอใบส่งของกับรายงานสินค้าออกจากคลัง":gap<0?"ยอดขายใน ภ.พ.30 สูงกว่างบ ให้ตรวจการออกใบกำกับภาษีก่อนส่งมอบและรายได้รับล่วงหน้า":"ยอดตรงกัน งบกับ ภ.พ.30 ไม่มีผลต่างที่ต้องอธิบาย")}
+["rTot","rDiv","rOth","rVat","rRate"].forEach(id=>$(id).oninput=recon);
+function loan(){const p=v("lP"),r=v("lR")/100,m=Math.min(12,v("lM")),b=v("lB"),mkt=p*r*m/12,add=Math.max(0,mkt-b),tx=add*0.2;
+ $("lOut").innerHTML=`<table><tr><th>รายการ</th><th class="num">บาท</th></tr><tr><td>ดอกเบี้ยตามราคาตลาด (${fmt(p)} × ${(r*100).toFixed(1)}% × ${m}/12)</td><td class="num">${fmt(mkt)}</td></tr><tr><td>ดอกเบี้ยที่บันทึกในงบ</td><td class="num">${fmt(b)}</td></tr><tr><td>เงินได้ที่เจ้าพนักงานประเมินเพิ่มตามมาตรา 65 ทวิ (4)</td><td class="num">${fmt(add)}</td></tr><tr><td><b>ภาษีเงินได้นิติบุคคลที่เพิ่มขึ้น อัตราภาษีทั่วไปร้อยละ 20</b></td><td class="num"><b>${fmt(tx)}</b></td></tr></table>`;
+ const def=p===3e6&&r===0.05&&m===12&&b===0,f=$("lFb");f.className="fb "+(def?"good":"info");f.textContent=def?"ตรงกับตัวอย่าง 5.2: ประเมินเพิ่ม 150,000 บาท ภาษี 30,000 บาท ผลทางภาษีธุรกิจเฉพาะและภาษีหัก ณ ที่จ่ายอยู่ในบทที่ 13":"ถ้าบริษัทพิสูจน์เหตุอันสมควรได้ เจ้าพนักงานประเมินตามมาตรา 65 ทวิ (4) ไม่ได้ ให้เตรียมสัญญากู้และมติกรรมการ"}
+["lP","lR","lM","lB"].forEach(id=>$(id).oninput=loan);
+function ratio(){const s1=v("aS1"),c1=v("aC1"),i1=v("aI1"),s2=v("aS2"),c2=v("aC2"),i2=v("aI2");if(!s1||!s2||!c1||!c2)return;
+ const g1=(s1-c1)/s1,g2=(s2-c2)/s2,d1=i1/c1*365,d2=i2/c2*365,exp=s2*(1-g1),gapc=c2-exp,sg=s2/s1-1,ig=i1?i2/i1-1:0;
+ $("aOut").innerHTML=`<table><tr><th>อัตราส่วน</th><th class="num">ปีก่อน</th><th class="num">ปีนี้</th></tr><tr><td>อัตรากำไรขั้นต้น</td><td class="num">${pct(g1)}</td><td class="num">${pct(g2)}</td></tr><tr><td>จำนวนวันสินค้าคงเหลือ (วัน)</td><td class="num">${(d1).toFixed(1)}</td><td class="num">${(d2).toFixed(1)}</td></tr><tr><td>ยอดขายเพิ่มขึ้น</td><td class="num"></td><td class="num">${pct(sg)}</td></tr><tr><td>สินค้าคงเหลือเพิ่มขึ้น</td><td class="num"></td><td class="num">${pct(ig)}</td></tr><tr><td>ต้นทุนขายถ้าอัตรากำไรขั้นต้นเท่าปีก่อน</td><td class="num"></td><td class="num">${fmt(exp)}</td></tr><tr><td><b>ต้นทุนขายที่บันทึกสูงกว่าที่คาด</b></td><td class="num"></td><td class="num"><b>${fmt(gapc)}</b></td></tr></table>`;
+ const def=s1===7e7&&c1===525e5&&i1===6e6&&s2===78e6&&c2===6084e4&&i2===9e6,f=$("aFb");f.className="fb "+(def?"good":"info");
+ f.textContent=def?"ตรงกับตัวอย่าง 5.3: อัตรากำไรขั้นต้น 25.0% เป็น 22.0% จำนวนวันสินค้าคงเหลือ 41.7 เป็น 54.0 วัน ส่วนต่างต้นทุนขาย 2,340,000 บาทไม่ใช่เงินได้ที่ประเมินได้ แต่บอกขนาดของคำถามที่บริษัทต้องตอบ":(g2<g1-0.02||d2>d1*1.2?"สัญญาณผิดปกติ: ขอใบกำกับภาษีซื้อ ราคาขายต่อหน่วย รายงานสินค้าและวัตถุดิบ และผลการตรวจนับ":"อัตราส่วนยังไม่ห่างจากปีก่อนมาก แต่ยังต้องตรวจเอกสารตามความเสี่ยงอื่น")}
+["aS1","aC1","aI1","aS2","aC2","aI2"].forEach(id=>$(id).oninput=ratio);
+$("opSel").innerHTML=OPS.map((o,i)=>`<option value="${i}">${o[0]}</option>`).join("");
+function op(){const o=OPS[+$("opSel").value];$("opOut").innerHTML=`<div><span class="tag ok">${o[1]}</span></div><div class="fb info" style="display:block">${o[2]}</div>`}
+$("opSel").onchange=op;
+$("caseList").innerHTML=CASES.map(c=>`<details class="card"><summary><b>${c[0]}</b> <span class="tag ${c[1]}">${c[1]==="ok"?"ตรวจจาก rd.go.th":"รอฉบับเต็ม"}</span> <span class="tag">${c[2]}</span></summary><ul>${c[3].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("");
+function renderQ(){$("quizBox").innerHTML=Q.map((q,i)=>{const a=S.quiz[i];return `<div class="card"><small class="q">ข้อ ${i+1} · LO${q[3]}</small><div>${q[0]}</div>${q[1].map((o,j)=>`<button class="btn opt ${a!==undefined?(j===q[2]?"right":(j===a?"wrong":"")):""}" data-i="${i}" data-j="${j}" ${a!==undefined?"disabled":""}>${"กขคง"[j]}. ${o}</button>`).join("")}<div class="fb ${a!==undefined?(a===q[2]?"good":"bad"):""}">${a!==undefined?(a===q[2]?"ถูกต้อง ":"คำตอบคือ "+"กขคง"[q[2]]+" ")+"· "+q[4]:""}</div></div>`}).join("");
+ const by={};Q.forEach((q,i)=>{by[q[3]]=by[q[3]]||[0,0];if(S.quiz[i]!==undefined){by[q[3]][1]++;if(S.quiz[i]===q[2])by[q[3]][0]++}});
+ $("quizSum").innerHTML=`<b>คะแนนราย LO</b><table>${Object.keys(by).sort().map(k=>`<tr><td>LO${k}</td><td class="num">${by[k][0]} / ${by[k][1]} ข้อที่ตอบ</td></tr>`).join("")}</table><button class="btn" id="qReset" style="margin-top:8px">ทำใหม่</button>`;$("qReset").onclick=()=>{S.quiz={};save();renderQ()}}
+$("quizBox").onclick=e=>{const b=e.target.closest("button.opt");if(!b||b.disabled)return;S.quiz[b.dataset.i]=+b.dataset.j;save();renderQ()};
+let fi=0,flip=false,ORD=FC.map((c,i)=>i);
+function deck(){return ORD.filter(i=>!S.fc[i])}
+function fc(){const d=deck();$("fCount").textContent=`จำได้ ${FC.length-d.length}/${FC.length}`;if(!d.length){$("flash").textContent="จำได้ครบแล้ว แตะเพื่อเริ่มใหม่";return}fi=d[0];$("flash").textContent=flip?FC[fi][1]:FC[fi][0]}
+$("flash").onclick=()=>{if(!deck().length){S.fc={};save();flip=false;fc();return}flip=!flip;fc()};
+$("fYes").onclick=()=>{if(!deck().length)return;S.fc[fi]=1;save();flip=false;fc()};
+$("fNo").onclick=()=>{if(!deck().length)return;ORD.splice(ORD.indexOf(fi),1);ORD.splice(Math.min(2,ORD.length),0,fi);flip=false;fc()};
+recon();loan();ratio();op();renderQ();fc();show((location.hash||"#home").slice(1)in{home:1,recon:1,loan:1,ratio:1,audit:1,cases:1,quiz:1,cards:1}?(location.hash||"#home").slice(1):"home");
+</script>
+</body>
+</html>
