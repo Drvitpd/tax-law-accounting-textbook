@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>แอปบทที่ 3 การเลือกชุดมาตรฐาน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ok:#1f9d55;--warn:#d4a017;--bad:#d64545;--ink:#1d2433;--quiet:#5b6577;--line:#d9dde5;--bg:#fff8f3;--card:#fff;--accent:#F26B21;--accent-soft:#fde8dc;--brand:#1C2230}
+*{box-sizing:border-box}
+body{margin:0;font-family:Sarabun,system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55}
+header{background:#fff;color:var(--brand);padding:14px 20px;border-bottom:5px solid var(--accent);display:flex;align-items:center;gap:14px;flex-wrap:wrap}.logo{height:38px;width:auto}.tax{background:var(--accent);color:#fff;font-weight:700;letter-spacing:3px;padding:4px 12px;border-radius:6px;font-size:18px}.htxt{flex:1 1 260px}
+header h1{margin:0;font-size:19px;font-weight:700}header p{margin:2px 0 0;font-size:13px;color:var(--quiet)}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:20px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer;color:var(--ink)}
+nav button.on{background:var(--accent);color:#fff;border-color:var(--accent)}nav button:hover{border-color:var(--accent)}
+main{max-width:860px;margin:0 auto;padding:18px 14px 60px}
+section{display:none}section.on{display:block}
+h2{font-size:20px;margin:6px 0 4px;color:var(--accent)}
+.lead{color:var(--quiet);margin:0 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--accent-soft);border-radius:12px;padding:14px 16px;margin:10px 0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.btn{border:1px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;font:inherit;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);color:var(--quiet)}
+.tag.ok{border-color:var(--ok);color:var(--ok)}.tag.wait{border-color:var(--warn);color:#9a7408}.tag.bad{border-color:var(--bad);color:var(--bad)}
+.fb{margin-top:8px;padding:8px 10px;border-radius:8px;font-size:14px;display:none}
+.fb.good{display:block;background:#e7f6ec;color:#155d35}.fb.bad{display:block;background:#fbe9e9;color:#8a2626}.fb.info{display:block;background:#fff4e6;color:#7a4a0c}
+.progress{height:8px;background:var(--line);border-radius:4px;overflow:hidden}.progress div{height:100%;background:var(--accent)}
+table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:6px 4px;text-align:left;vertical-align:top}td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.abbr td:first-child{font-weight:700;white-space:nowrap;color:var(--accent)}
+label.f{display:block;margin:6px 0 2px;font-size:14px;color:var(--quiet)}
+input[type=number]{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;font:inherit;font-variant-numeric:tabular-nums}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.flash{min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:20px;cursor:pointer;user-select:none}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}
+.opt.right{background:#e7f6ec;border-color:var(--ok)}.opt.wrong{background:#fbe9e9;border-color:var(--bad)}
+small.q{color:var(--quiet)}
+select{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:8px;max-width:100%}
+</style>
+</head>
+<body>
+<header><svg class="logo" viewBox="-20 -750 2996.16 770" role="img" aria-label="Dr VIT"><g transform="translate(-172.89,-845.26) scale(9.6053)"><path d="M18 12 H48 A38 38 0 0 1 48 88 H18 Z" fill="#F26B21"/><path d="M32 50 L45 64 L70 34" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="70" cy="34" r="5.5" fill="#1C2230"/></g><path d="M708.16 0V-548H835.16V-313H832.16Q832.16 -429 881.66 -492.0Q931.16 -555 1025.16 -555H1046.16V-417H1006.16Q940.16 -417 904.16 -381.5Q868.16 -346 868.16 -279V0Z" fill="#1C2230"/><path d="M1529.16 0 1307.16 -730H1476.16L1652.16 -114L1614.16 -133H1716.16L1676.16 -114L1839.16 -730H2003.16L1796.16 0ZM2100.16 0V-730H2264.16V0ZM2565.16 0V-607H2729.16V0ZM2360.16 -587V-730H2935.16V-587Z" fill="#F26B21"/></svg><span class="tax">TAX</span><div class="htxt"><h1>แอปประจำบทที่ 3 · การเลือกชุดมาตรฐาน</h1><p>ตำรา การบัญชีสำหรับนักกฎหมายภาษีอากร · สถานะกฎหมาย ณ 26 พ.ย. 2569 · ตัวเลขในแอปเป็นตัวอย่างสมมติของบริษัท ทุ่งทอง จำกัด และบริษัท ทุ่งเงิน จำกัด</p></div></header>
+<nav id="nav"></nav>
+<main>
+<section id="home">
+<h2>เริ่มต้น</h2><p class="lead">ใช้หลังอ่านบทจบ กิจกรรมในแอปตอบคำถามเดียวกับบท คือกิจการนี้ใช้ชุดมาตรฐานใด และการเลือกนั้นเปลี่ยนภาษีหรือไม่</p>
+<div class="card"><b>ความคืบหน้า</b><div class="progress" style="margin-top:8px"><div id="prog" style="width:0"></div></div><small class="q" id="progtxt"></small></div>
+<div class="card"><b>ผลลัพธ์การเรียนรู้ (Learning Outcomes: LO)</b><ol style="margin:6px 0 0 18px;padding:0">
+<li>LO3.1 อธิบายฐานกฎหมายของสองชุดมาตรฐานและนิยามกิจการที่มีส่วนได้เสียสาธารณะ (เข้าใจ)</li>
+<li>LO3.2 จำแนกว่ากิจการต้องหรือเลือกใช้ชุดใด และทางเลือกรายฉบับที่ทำได้ (ประยุกต์ใช้)</li>
+<li>LO3.3 ปรับกำไรสุทธิทางบัญชีภายใต้แต่ละชุดเป็นกำไรสุทธิทางภาษีอากร (ประยุกต์ใช้)</li>
+<li>LO3.4 วิเคราะห์ท่าของภาษีต่อความแตกต่างของสองชุดด้วยกรอบ ตาม–ตรึง–แยก (วิเคราะห์)</li>
+<li>LO3.5 ประเมินระบบสองชุดของไทยเทียบระบบต่างประเทศและเสนอการปรับปรุง (ประเมินค่า)</li></ol></div>
+<div class="card"><b>คำย่อที่ใช้ในแอป</b><table class="abbr">
+<tr><td>Full TFRS</td><td>มาตรฐานการรายงานทางการเงิน ฉบับสมบูรณ์ (Full Thai Financial Reporting Standards)</td></tr>
+<tr><td>TFRS for NPAEs</td><td>มาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียสาธารณะ (Non-Publicly Accountable Entities)</td></tr>
+<tr><td>PAEs</td><td>กิจการที่มีส่วนได้เสียสาธารณะ (Publicly Accountable Entities)</td></tr>
+<tr><td>TAS</td><td>มาตรฐานการบัญชี (Thai Accounting Standard) เช่น TAS 12 ภาษีเงินได้ TAS 19 ผลประโยชน์ของพนักงาน</td></tr>
+<tr><td>ECL</td><td>ผลขาดทุนด้านเครดิตที่คาดว่าจะเกิดขึ้น (Expected Credit Loss) ตาม TFRS 9</td></tr>
+<tr><td>ROU</td><td>สินทรัพย์สิทธิการใช้ (Right-of-Use Asset) ตาม TFRS 16</td></tr>
+<tr><td>ก.ล.ต.</td><td>สำนักงานคณะกรรมการกำกับหลักทรัพย์และตลาดหลักทรัพย์</td></tr>
+<tr><td>ภ.ง.ด.50</td><td>แบบแสดงรายการภาษีเงินได้นิติบุคคล</td></tr>
+<tr><td>ท.ป.</td><td>คำสั่งกรมสรรพากรที่ออกโดยอาศัยอำนาจตามตัวบท</td></tr>
+</table></div>
+</section>
+<section id="who"><h2>1. กิจการนี้ใช้ชุดมาตรฐานใด</h2><p class="lead">ตอบคำถามตามย่อหน้า 2.2 ของ TFRS for NPAEs ทีละข้อ (หัวข้อ 3.3)</p>
+<div class="card" id="whoBox"></div></section>
+<section id="ex"><h2>2. บริษัทเดียวกันสามแบบ</h2><p class="lead">ค่าเริ่มต้นคือตัวอย่าง 3.7 ปรับตัวเลขเพื่อดูว่ากำไรทางบัญชีเปลี่ยนแต่กำไรสุทธิทางภาษีอากรไม่เปลี่ยน อัตราภาษีทั่วไปร้อยละ 20</p>
+<div class="card"><div class="grid">
+<div><label class="f">กำไรก่อนรายการที่มาตรฐานต่างกัน (บาท)</label><input type="number" id="eBase" value="10000000"></div>
+<div><label class="f">ประมาณการเงินชดเชยตาม NPAEs (บาท)</label><input type="number" id="eP1" value="300000"></div>
+<div><label class="f">ประมาณการเงินชดเชยตาม TAS 19 (บาท)</label><input type="number" id="eP2" value="380000"></div>
+<div><label class="f">เงินชดเชยที่จ่ายจริงในปี (บาท)</label><input type="number" id="ePaid" value="120000"></div>
+<div><label class="f">ค่าเผื่อหนี้ตาม NPAEs (บาท)</label><input type="number" id="eA1" value="200000"></div>
+<div><label class="f">ECL ตาม TFRS 9 (บาท)</label><input type="number" id="eA2" value="260000"></div>
+<div><label class="f">ค่าเช่าต่อปี (บาท)</label><input type="number" id="eRent" value="1200000"></div>
+<div><label class="f">อายุสัญญาเช่า (ปี)</label><input type="number" id="eN" value="5"></div>
+<div><label class="f">อัตราคิดลด (%)</label><input type="number" id="eR" value="5" step="0.1"></div>
+<div><label class="f">กำไรมูลค่ายุติธรรมของที่ดิน แบบ C (บาท)</label><input type="number" id="eFV" value="500000"></div>
+</div><div id="eOut" style="margin-top:12px"></div><div class="fb" id="eFb"></div></div></section>
+<section id="lease"><h2>3. สัญญาเช่าตลอดอายุ</h2><p class="lead">ใช้ข้อมูลสัญญาเช่าจากกิจกรรมที่ 2 เทียบค่าใช้จ่ายตาม TFRS 16 กับค่าเช่าตามสัญญา ผลรวมตลอดอายุเท่ากัน ความต่างเป็นเพียงจังหวะ (ข้ออัตนัยข้อ 2)</p>
+<div class="card" id="lOut"></div></section>
+<section id="cases"><h2>4. คดี คำสั่ง และข้อหารือ</h2><p class="lead">แตะเพื่อดูรายละเอียด ป้ายบอกท่าในกรอบ ตาม–ตรึง–แยก</p><div id="caseList"></div></section>
+<section id="quiz"><h2>5. แบบทดสอบ 12 ข้อ</h2><p class="lead">ข้อเดียวกับปรนัยท้ายบท ควรทำในเล่มให้ครบก่อน ตอบแล้วเห็นเหตุผลทันที สรุปคะแนนราย LO อยู่ท้ายสุด</p><div id="quizBox"></div><div class="card" id="quizSum"></div></section>
+<section id="cards"><h2>6. การ์ดศัพท์</h2><p class="lead">แตะการ์ดเพื่อพลิก กด "ยังจำไม่ได้" เพื่อให้คำนั้นกลับมาเร็วขึ้น</p>
+<div class="card flash" id="flash"></div><div class="row"><button class="btn" id="fNo">ยังจำไม่ได้</button><button class="btn primary" id="fYes">จำได้แล้ว</button><small class="q" id="fCount"></small></div></section>
+<p style="font-size:12px;color:var(--quiet);margin-top:30px">เนื้อหาเป็นการถอดความของคณะผู้เขียน ไม่ใช่ถ้อยคำของตัวบทหรือมาตรฐาน</p>
+</main>
+<script>
+const TABS=[["home","เริ่มต้น"],["who","ใช้ชุดใด"],["ex","สามแบบ"],["lease","สัญญาเช่า"],["cases","คดีและคำสั่ง"],["quiz","แบบทดสอบ"],["cards","การ์ดศัพท์"]];
+const Q=[["กฎหมายใดให้อำนาจสภาวิชาชีพบัญชีกำหนดมาตรฐานการบัญชี", ["พระราชบัญญัติการบัญชี พ.ศ. 2543 มาตรา 20", "พระราชบัญญัติวิชาชีพบัญชี พ.ศ. 2547 มาตรา 7 (3)", "ประมวลรัษฎากร มาตรา 65", "คำสั่งกรมสรรพากรที่ ท.ป.1/2528"], 1, "3.1", "มาตรา 7 (3) ให้อำนาจสภาวิชาชีพบัญชีกำหนดมาตรฐาน ส่วนมาตรา 20 ของ พ.ร.บ.การบัญชีเป็นหน้าที่ของผู้มีหน้าที่จัดทำบัญชี (หัวข้อ 3.2)"], ["กิจการใดไม่เป็นกิจการที่มีส่วนได้เสียสาธารณะตามย่อหน้า 2.2", ["บริษัทมหาชนจำกัดที่ไม่ได้จดทะเบียนในตลาดหลักทรัพย์", "บริษัทประกันวินาศภัย", "บริษัทจำกัดที่ตั้งใจเข้าตลาดหลักทรัพย์ในสองปี แต่ยังไม่นำส่งงบการเงินต่อ ก.ล.ต.", "กองทุนรวม"], 2, "3.1", "บริษัทนี้ยังไม่อยู่ในกระบวนการนำส่งงบต่อ ก.ล.ต. จึงยังไม่เข้าย่อหน้า 2.2.1 (หัวข้อ 3.3)"], ["ประกาศสภาวิชาชีพบัญชีที่ 48/2565 เรื่อง TFRS for NPAEs (ปรับปรุง 2565) ใช้บังคับตั้งแต่วันใด", ["1 มกราคม 2565", "30 พฤศจิกายน 2565", "1 มกราคม 2566", "1 มกราคม 2567"], 2, "3.1", "มาตรฐานฉบับปรับปรุงใช้กับรอบบัญชีที่เริ่มในหรือหลัง 1 มกราคม 2566 (หัวข้อ 3.2)"], ["บริษัทจำกัดที่ใช้ TFRS for NPAEs ต้องการวัดภาระผูกพันผลประโยชน์พนักงานตาม TAS 19 ข้อใดถูกต้อง", ["ทำไม่ได้ เพราะต้องใช้ประมาณการที่ดีที่สุดเท่านั้น", "ทำได้ตามย่อหน้า 16.14", "ทำได้เฉพาะเมื่อใช้ Full TFRS ทุกฉบับ", "ต้องขออนุมัติอธิบดีกรมสรรพากรก่อน"], 1, "3.2", "ย่อหน้า 16.14 เปิดให้กิจการเลือกใช้ TAS 19 ได้ทั้งฉบับ (หัวข้อ 3.4)"], ["บริษัทมหาชนจำกัดถูกเพิกถอนหลักทรัพย์จากตลาด ข้อใดถูกต้อง", ["กลับไปใช้ TFRS for NPAEs ได้ทันที", "กลับได้เมื่อแสดงเหตุผลตาม TAS 8", "ยังต้องใช้ Full TFRS เพราะยังเข้าย่อหน้า 2.2.3", "เลือกได้อย่างอิสระ"], 2, "3.2", "รูปแบบบริษัทมหาชนจำกัดยังเข้าย่อหน้า 2.2.3 แม้ไม่มีหลักทรัพย์ซื้อขายแล้ว (หัวข้อ 3.6)"], ["กิจการที่ใช้ TFRS for NPAEs เลือกวิธีมูลค่ายุติธรรมสำหรับอสังหาริมทรัพย์เพื่อการลงทุน ข้อใดถูกต้อง", ["เปลี่ยนกลับเป็นวิธีราคาทุนได้ทุกปี", "เปลี่ยนกลับไม่ได้จนกว่าจะจำหน่าย (ย่อหน้า 12.19)", "ต้องขออนุมัติตาม ท.ป.1/2528 ข้อ 3.4 ก่อนเลือก", "ต้องใช้ TFRS 16 ด้วย"], 1, "3.2", "ย่อหน้า 12.19 ห้ามเปลี่ยนกลับเมื่อเลือกวิธีมูลค่ายุติธรรมแล้ว (หัวข้อ 3.6)"], ["ตามตัวอย่าง 3.7 แบบ A ยอดปรับเพิ่มสุทธิจากประมาณการเงินชดเชยเกษียณใน ภ.ง.ด.50 เป็นเท่าใด", ["120,000 บาท", "180,000 บาท", "300,000 บาท", "420,000 บาท"], 1, "3.3", "ประมาณการ 300,000 บาทเป็นรายจ่ายต้องห้าม หักได้เฉพาะที่จ่ายจริง 120,000 บาท ยอดปรับเพิ่มสุทธิจึงเท่ากับ 180,000 บาท"], ["ตามตัวอย่าง 3.7 แบบ C ถ้าบริษัทหักค่าเช่าตามสัญญาในทางภาษี กำไรสุทธิทางภาษีอากรเป็นเท่าใด", ["8,561,157 บาท", "8,581,157 บาท", "8,680,000 บาท", "9,061,157 บาท"], 2, "3.3", "8,581,157 บวกส่วนต่างสัญญาเช่า 98,843 เท่ากับ 8,680,000 บาท เท่ากับแบบ A และ B"], ["กำไรจากมูลค่ายุติธรรมของที่ดินเพื่อการลงทุน 500,000 บาทในแบบ C ปรับใน ภ.ง.ด.50 อย่างไร", ["รวมเป็นรายได้ตามบัญชี", "หักออก เพราะเข้าลักษณะการตีราคาตามมาตรา 65 ทวิ (3)", "บวกกลับตามมาตรา 65 ตรี (1)", "เฉลี่ยรับรู้ 5 ปี"], 1, "3.3", "หนังสือตอบข้อหารือ กค 0702/1683 ถือว่ากำไรนี้เข้าลักษณะการตีราคาทรัพย์สินตามมาตรา 65 ทวิ (3) จึงไม่นำมาคำนวณ"], ["ผลขาดทุนด้านเครดิตที่คาดว่าจะเกิดขึ้น (ECL) ตาม TFRS 9 อยู่ในท่าใดของกรอบ ตาม–ตรึง–แยก", ["ตาม", "ตรึง", "แยกและตรึง", "ไม่มีผลทางภาษี"], 2, "3.4", "ค่าเผื่อถูกบวกกลับตามมาตรา 65 ตรี (1) (แยก) แล้วเวลาหักถูกตรึงไว้กับการจำหน่ายหนี้สูญตามกฎกระทรวง ฉบับที่ 186 (ตรึง)"], ["คำพิพากษาศาลฎีกาที่ 135/2550 วางหลักใด", ["มาตรฐานการบัญชีลบล้างประมวลรัษฎากรได้เมื่อออกภายหลัง", "เมื่อประมวลรัษฎากรมีถ้อยคำเฉพาะ มาตรฐานการบัญชีไม่ว่าชุดใดไม่เปลี่ยนฐานภาษี", "ดอกเบี้ยเงินกู้ซื้อที่ดินหักได้เมื่อที่ดินพร้อมใช้งาน", "ภาษีต้องคำนวณตาม Full TFRS"], 1, "3.4", "ทั้งศาลภาษีอากรกลางและศาลฎีกาเห็นว่ามาตรฐานการบัญชีลบล้างถ้อยคำในมาตรา 65 ตรี (5) ไม่ได้ (หลัก 3.1)"], ["ข้อใดอธิบายตำแหน่งของระบบไทยเมื่อเทียบเยอรมนีและสหรัฐอเมริกาได้ถูกต้องที่สุด", ["ภาษีไทยแยกจากบัญชีโดยสิ้นเชิงแบบสหรัฐอเมริกา", "ภาษีไทยผูกกับผลของวิธีการบัญชีที่รับรองทั่วไปเป็นรายเรื่อง และอ้างสถานะ PAEs เฉพาะข้อ 3.7", "ไทยบังคับให้ทำบัญชีภาษีแยกทุกกิจการ", "ประมวลรัษฎากรไม่อ้างบัญชีเลย"], 1, "3.5", "ประมวลรัษฎากรและคำสั่งกรมสรรพากรอ้างบัญชีเป็นรายเรื่อง และใช้สถานะ PAEs เป็นเกณฑ์เฉพาะ ท.ป.1/2528 ข้อ 3.7 (หัวข้อ 3.10)"]];const FC=[["กิจการที่มีส่วนได้เสียสาธารณะ", "Publicly Accountable Entities: PAEs · กิจการตามย่อหน้า 2.2 ที่ต้องใช้ Full TFRS"], ["Full TFRS", "มาตรฐานการรายงานทางการเงิน ฉบับสมบูรณ์ · ชุดที่แปลจาก IFRS"], ["TFRS for NPAEs", "มาตรฐานการรายงานทางการเงินสำหรับกิจการที่ไม่มีส่วนได้เสียสาธารณะ ฉบับปรับปรุง 2565"], ["TFRS 19", "การเปิดเผยข้อมูลของบริษัทย่อยที่ไม่มีส่วนได้เสียสาธารณะ เลือกได้ตั้งแต่ 2571"], ["สินทรัพย์สิทธิการใช้", "Right-of-Use Asset: ROU · ผู้เช่ารับรู้ตาม TFRS 16"], ["ผลขาดทุนด้านเครดิตที่คาดว่าจะเกิดขึ้น", "Expected Credit Loss: ECL · ค่าเผื่อตาม TFRS 9"], ["ภาษีเงินได้รอการตัดบัญชี", "Deferred Tax · รับรู้ตาม TAS 12 หรือเลือกได้ตาม TFRS for NPAEs บทที่ 15.2"], ["บัญชีภาษีแยก", "Tax Book · บัญชีที่ทำเพื่อคำนวณภาษีแยกจากบัญชีการเงิน"], ["การหลบหลีกภาษีอากร", "Tax Avoidance · มีทั้งแบบที่ยอมรับได้และยอมรับไม่ได้"], ["การหนีภาษีอากร", "Tax Evasion · ไม่บันทึกหรือแสดงรายการเท็จ มีโทษตามมาตรา 37"], ["ชุดข้อมูลปรับปรุงเพื่องบการเงินรวม", "Group Reporting Package · ข้อมูลที่บริษัทย่อยแปลงเป็นตาม TFRS ส่งบริษัทใหญ่"]];const CASES=[["คำพิพากษาศาลฎีกาที่ 135/2550 บริษัท สตาร์ไพน์ จำกัด", "ok", "หลัก 3.1 ตัวบทอยู่เหนือมาตรฐาน", ["ประเด็น: ดอกเบี้ยเงินกู้ซื้อที่ดินหักเป็นรายจ่ายได้หรือไม่", "หลัก: มาตรา 65 ตรี (5) ห้ามรายจ่ายอันมีลักษณะเป็นการลงทุน", "ปรับใช้: ศาลภาษีอากรกลางเห็นว่ามาตรฐานการบัญชีไม่มีผลลบล้างถ้อยคำในมาตรา 65 ตรี (5) ศาลฎีกาเห็นพ้อง และวินิจฉัยว่าดอกเบี้ยนี้เป็นรายจ่ายฝ่ายทุน", "สรุป: ประมวลรัษฎากรอยู่เหนือมาตรฐานการบัญชีไม่ว่าชุดใด"]], ["ท.ป.1/2528 ข้อ 3.4 แก้ไขโดย ท.ป.299/2561", "ok", "หลัก 3.2 ตามแต่ผูกความสม่ำเสมอ", ["ผู้ให้เช่า (วรรคหนึ่ง) และผู้เช่า (วรรคสอง) เลือกได้ระหว่างตามส่วนแห่งระยะเวลา หรือตามเกณฑ์อื่นที่เหมาะสมตามวิธีการทางบัญชีที่รับรองทั่วไป", "วรรคสาม: เลือกแล้วต้องใช้ต่อเนื่อง เปลี่ยนได้เมื่อได้รับอนุมัติ", "การใช้ผลตาม TFRS 16 ในทางภาษีเป็นข้อสรุปจากตัวบท ยังไม่มีหนังสือตอบข้อหารือยืนยันตรง"]], ["ท.ป.1/2528 ข้อ 3.7 แก้ไขโดย ท.ป.228/2557 และ ท.ป.262/2559", "ok", "หลัก 3.3 สถานะ PAEs เป็นเกณฑ์ภาษี", ["ผู้ขายอสังหาริมทรัพย์ที่เป็น NPAEs เลือกวิธีรับรู้รายได้ได้", "บริษัทที่ต้องจัดทำงบการเงินรวมกับ PAEs ต้องใช้วิธีการทางบัญชีที่รับรองทั่วไป (วรรคห้า)", "ข้อยกเว้น: บริษัทย่อยที่เลือกวิธีไว้ก่อนรอบบัญชีปี 2559"]], ["หนังสือตอบข้อหารือ กค 0702/1683 (28 มี.ค. 2566)", "ok", "แยก", ["กำไรจากมูลค่ายุติธรรมของอสังหาริมทรัพย์เพื่อการลงทุนเข้าลักษณะการตีราคาตามมาตรา 65 ทวิ (3) ไม่นำมาคำนวณกำไรสุทธิ"]], ["หนังสือตอบข้อหารือ กค 0702/1978 (8 เม.ย. 2568)", "ok", "แยกและตรึง", ["ประมาณการเงินชดเชยตาม NPAEs เป็นเงินสำรองต้องห้ามตามมาตรา 65 ตรี (1) หักได้เมื่อจ่ายจริง"]], ["หนังสือตอบข้อหารือ กค 0702/638 (4 ก.พ. 2568)", "ok", "ตรึง", ["การจำหน่ายหนี้สูญต้องทำตามมาตรา 65 ทวิ (9) และกฎกระทรวง ฉบับที่ 186"]]];
+const STEPS=[["กิจการมีตราสารทุนหรือตราสารหนี้ซื้อขายต่อประชาชน หรืออยู่ในกระบวนการนำส่งงบการเงินต่อ ก.ล.ต. หรือหน่วยงานกำกับอื่นเพื่อออกขายหลักทรัพย์หรือไม่","2.2.1"],["ธุรกิจหลักคือดูแลสินทรัพย์ของบุคคลภายนอกกลุ่มใหญ่ เช่น สถาบันการเงิน บริษัทประกันชีวิตหรือวินาศภัย บริษัทหลักทรัพย์ กองทุนรวม หรือไม่ (ตัวแทนท่องเที่ยว นายหน้าอสังหาริมทรัพย์ โรงรับจำนำ ตอบไม่ใช่ ตามย่อหน้า 2.3)","2.2.2"],["เป็นบริษัทมหาชนจำกัดตามกฎหมายว่าด้วยบริษัทมหาชนจำกัดหรือไม่ (แม้ไม่ได้จดทะเบียนในตลาด)","2.2.3"]];
+let S={seen:{},quiz:{},fc:{}};try{const x=JSON.parse(localStorage.getItem("ch3app"));if(x)S=Object.assign(S,x)}catch(e){}
+function save(){try{localStorage.setItem("ch3app",JSON.stringify(S))}catch(e){}prog()}
+const $=id=>document.getElementById(id),fmt=n=>{const r=Math.round(n)||0;return r<0?"("+Math.abs(r).toLocaleString("en-US")+")":r.toLocaleString("en-US")},v=id=>Math.max(0,+$(id).value||0);
+function show(id){document.querySelectorAll("section").forEach(s=>s.classList.toggle("on",s.id===id));document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.id===id));S.seen[id]=1;save();if(location.hash!=="#"+id)history.replaceState(null,"","#"+id)}
+$("nav").innerHTML=TABS.map(t=>`<button data-id="${t[0]}">${t[1]}</button>`).join("");
+$("nav").onclick=e=>{if(e.target.dataset.id)show(e.target.dataset.id)};
+function prog(){const done=TABS.slice(1).filter(t=>S.seen[t[0]]).length,q=Object.keys(S.quiz).length;const p=Math.round(done/6*60+q/Q.length*40);$("prog").style.width=p+"%";$("progtxt").textContent=`${p}% · เปิดกิจกรรมแล้ว ${done}/6 · ทำแบบทดสอบ ${q}/${Q.length}`}
+let step=0;
+function who(){if(step<STEPS.length){$("whoBox").innerHTML=`<small class="q">ข้อ ${step+1}/3 · ย่อหน้า ${STEPS[step][1]}</small><div style="margin:6px 0 10px">${STEPS[step][0]}</div><div class="row"><button class="btn primary" id="wYes">ใช่</button><button class="btn" id="wNo">ไม่ใช่</button></div>`;
+ $("wYes").onclick=()=>{$("whoBox").innerHTML=`<div class="fb bad" style="display:block">เป็นกิจการที่มีส่วนได้เสียสาธารณะตามย่อหน้า ${STEPS[step][1]} ต้องใช้ Full TFRS ทั้งชุด เลือกรายฉบับจาก TFRS for NPAEs ไม่ได้</div><button class="btn" id="wR" style="margin-top:8px">เริ่มใหม่</button>`;$("wR").onclick=()=>{step=0;who()}};
+ $("wNo").onclick=()=>{step++;who()}}
+ else{$("whoBox").innerHTML=`<div class="fb good" style="display:block">เป็นกิจการที่ไม่มีส่วนได้เสียสาธารณะ ใช้ TFRS for NPAEs ได้ หรือเลือกใช้ Full TFRS ทั้งชุดตามย่อหน้า 2.4 และยังเลือกรายฉบับเฉพาะที่ TFRS for NPAEs เปิดไว้ เช่น TAS 12 (15.2) และ TAS 19 (16.14) (หัวข้อ 3.4)</div><div class="fb info" style="display:block">ทางภาษี: เมื่อประมวลรัษฎากรมีถ้อยคำเฉพาะ การเลือกชุดไม่เปลี่ยนฐานภาษี (หลัก 3.1) ข้อยกเว้นคือการขายอสังหาริมทรัพย์ของบริษัทที่ต้องจัดทำงบการเงินรวมกับ PAEs ตาม ท.ป.1/2528 ข้อ 3.7 (หลัก 3.3)</div><button class="btn" id="wR" style="margin-top:8px">เริ่มใหม่</button>`;$("wR").onclick=()=>{step=0;who()}}}
+function leaseCalc(){const R=v("eRent"),n=Math.max(1,Math.round(v("eN"))),r=v("eR")/100;let pv=0;for(let k=1;k<=n;k++)pv+=R/Math.pow(1+r,k);const dep=pv/n;let L=pv,rows=[];for(let k=1;k<=n;k++){const i=L*r;L=L+i-R;rows.push([k,dep,i,dep+i,R,dep+i-R]);}return{pv,dep,rows}}
+function ex(){const base=v("eBase"),p1=v("eP1"),p2=v("eP2"),paid=v("ePaid"),a1=v("eA1"),a2=v("eA2"),fv=v("eFV"),R=v("eRent"),L=leaseCalc(),le=L.rows[0][3],ld=le-R;
+ const A=base-p1-a1-R,B=base-p2-a1-R,C=base-p2-a2-le+fv;
+ const tA=A+(p1-paid)+a1,tB=B+(p2-paid)+a1,tCb=C+(p2-paid)+a2-fv,tC=tCb+ld;
+ const cur=[tA,tB,tC].map(x=>x*0.2);
+ const liab=L.pv*(1+v("eR")/100)-R,rou=L.pv-L.dep;
+ const dtC=((p2-paid)+a2+(liab-rou))*0.2-fv*0.2;
+ const exp=[cur[0],cur[1],cur[2]-dtC],acc=[A,B,C];
+ const r=(l,a,b,c,bold)=>`<tr><td>${bold?"<b>"+l+"</b>":l}</td><td class="num">${bold?"<b>"+a+"</b>":a}</td><td class="num">${bold?"<b>"+b+"</b>":b}</td><td class="num">${bold?"<b>"+c+"</b>":c}</td></tr>`;
+ $("eOut").innerHTML=`<div style="overflow-x:auto"><table><tr><th>รายการ (บาท)</th><th class="num">A NPAEs ล้วน</th><th class="num">B NPAEs + TAS 19</th><th class="num">C Full TFRS</th></tr>
+ ${r("กำไรก่อนรายการ",fmt(base),fmt(base),fmt(base))}${r("ประมาณการเงินชดเชย",fmt(-p1),fmt(-p2),fmt(-p2))}${r("ค่าเผื่อหนี้ / ECL",fmt(-a1),fmt(-a1),fmt(-a2))}${r("สัญญาเช่า",fmt(-R),fmt(-R),fmt(-le))}${r("กำไรมูลค่ายุติธรรมที่ดิน","—","—",fmt(fv))}
+ ${r("กำไรสุทธิทางบัญชีก่อนภาษี",fmt(A),fmt(B),fmt(C),1)}${r("บวกกลับประมาณการ หักที่จ่ายจริง","+"+fmt(p1-paid),"+"+fmt(p2-paid),"+"+fmt(p2-paid))}${r("บวกกลับค่าเผื่อหนี้","+"+fmt(a1),"+"+fmt(a1),"+"+fmt(a2))}${r("หักกำไรมูลค่ายุติธรรม (มาตรา 65 ทวิ (3))","—","—",fmt(-fv))}${r("ปรับสัญญาเช่าเป็นค่าเช่าตามสัญญา","—","—","+"+fmt(ld))}
+ ${r("กำไรสุทธิทางภาษีอากร",fmt(tA),fmt(tB),fmt(tC),1)}${r("ภาษีเงินได้ของงวดปัจจุบัน 20%",fmt(cur[0]),fmt(cur[1]),fmt(cur[2]))}${r("(รายได้) ภาษีเงินได้รอการตัดบัญชีตาม TAS 12","—","—",fmt(-dtC))}${r("ค่าใช้จ่ายภาษีเงินได้ตามงบ",fmt(exp[0]),fmt(exp[1]),fmt(exp[2]),1)}${r("อัตราภาษีที่แท้จริง",...acc.map((a,i)=>a?(exp[i]/a*100).toFixed(1)+"%":"—"))}</table></div>`;
+ const def=base===1e7&&p1===3e5&&p2===38e4&&paid===12e4&&a1===2e5&&a2===26e4&&R===12e5&&Math.round(v("eN"))===5&&v("eR")===5&&fv===5e5,f=$("eFb");f.className="fb "+(def?"good":"info");
+ f.textContent=def?"ตรงกับตัวอย่าง 3.7: กำไรทางบัญชี 8,300,000 / 8,220,000 / 8,561,157 บาท แต่กำไรสุทธิทางภาษีอากรเท่ากัน 8,680,000 บาท ภาษีที่ต้องชำระ 1,736,000 บาท แบบ C รับรู้ภาษีเงินได้รอการตัดบัญชีสุทธิ 23,769 บาท":"กำไรสุทธิทางภาษีอากรของทั้งสามแบบยังเท่ากันเมื่อหักค่าเช่าตามสัญญา เพราะทุกรายการที่ต่างกันเป็นแยกหรือตรึง (หลัก 3.1 และ 3.2)";leaseTbl()}
+function leaseTbl(){const L=leaseCalc();let t=0,tr=0;$("lOut").innerHTML=`<div style="margin-bottom:8px">สินทรัพย์สิทธิการใช้เริ่มต้น ${fmt(L.pv)} บาท</div><div style="overflow-x:auto"><table><tr><th>ปี</th><th class="num">ค่าเสื่อมราคา</th><th class="num">ดอกเบี้ย</th><th class="num">รวมตาม TFRS 16</th><th class="num">ค่าเช่าตามสัญญา</th><th class="num">ส่วนต่าง</th></tr>${L.rows.map(x=>{t+=x[3];tr+=x[4];return `<tr><td>${x[0]}</td><td class="num">${fmt(x[1])}</td><td class="num">${fmt(x[2])}</td><td class="num">${fmt(x[3])}</td><td class="num">${fmt(x[4])}</td><td class="num">${fmt(x[5])}</td></tr>`}).join("")}<tr><td><b>รวม</b></td><td></td><td></td><td class="num"><b>${fmt(t)}</b></td><td class="num"><b>${fmt(tr)}</b></td><td class="num"><b>${fmt(t-tr)}</b></td></tr></table></div><div class="fb info" style="display:block">ถ้าเลือกใช้ผลตาม TFRS 16 ในทางภาษี ต้องใช้ต่อเนื่องตลอดอายุสัญญาตาม ท.ป.1/2528 ข้อ 3.4 วรรคสาม การสลับวิธีตามปีที่ได้ประโยชน์เป็นการหลบหลีกภาษีอากรแบบที่ยอมรับไม่ได้ (หัวข้อ 3.12)</div>`}
+["eBase","eP1","eP2","ePaid","eA1","eA2","eRent","eN","eR","eFV"].forEach(id=>$(id).oninput=ex);
+$("caseList").innerHTML=CASES.map(c=>`<details class="card"><summary><b>${c[0]}</b> <span class="tag ${c[1]}">${c[1]==="ok"?"ตรวจต้นฉบับแล้ว":"รอตรวจ"}</span> <span class="tag">${c[2]}</span></summary><ul>${c[3].map(x=>`<li>${x}</li>`).join("")}</ul></details>`).join("");
+function renderQ(){$("quizBox").innerHTML=Q.map((q,i)=>{const a=S.quiz[i];return `<div class="card"><small class="q">ข้อ ${i+1} · LO${q[3]}</small><div>${q[0]}</div>${q[1].map((o,j)=>`<button class="btn opt ${a!==undefined?(j===q[2]?"right":(j===a?"wrong":"")):""}" data-i="${i}" data-j="${j}" ${a!==undefined?"disabled":""}>${"กขคง"[j]}. ${o}</button>`).join("")}<div class="fb ${a!==undefined?(a===q[2]?"good":"bad"):""}">${a!==undefined?(a===q[2]?"ถูกต้อง ":"คำตอบคือ "+"กขคง"[q[2]]+" ")+"· "+q[4]:""}</div></div>`}).join("");
+ const by={};Q.forEach((q,i)=>{by[q[3]]=by[q[3]]||[0,0];if(S.quiz[i]!==undefined){by[q[3]][1]++;if(S.quiz[i]===q[2])by[q[3]][0]++}});
+ $("quizSum").innerHTML=`<b>คะแนนราย LO</b><table>${Object.keys(by).sort().map(k=>`<tr><td>LO${k}</td><td class="num">${by[k][0]} / ${by[k][1]} ข้อที่ตอบ</td></tr>`).join("")}</table><button class="btn" id="qReset" style="margin-top:8px">ทำใหม่</button>`;$("qReset").onclick=()=>{S.quiz={};save();renderQ()}}
+$("quizBox").onclick=e=>{const b=e.target.closest("button.opt");if(!b||b.disabled)return;S.quiz[b.dataset.i]=+b.dataset.j;save();renderQ()};
+let fi=0,flip=false,ORD=FC.map((c,i)=>i);
+function deck(){return ORD.filter(i=>!S.fc[i])}
+function fc(){const d=deck();$("fCount").textContent=`จำได้ ${FC.length-d.length}/${FC.length}`;if(!d.length){$("flash").textContent="จำได้ครบแล้ว แตะเพื่อเริ่มใหม่";return}fi=d[0];$("flash").textContent=flip?FC[fi][1]:FC[fi][0]}
+$("flash").onclick=()=>{if(!deck().length){S.fc={};save();flip=false;fc();return}flip=!flip;fc()};
+$("fYes").onclick=()=>{if(!deck().length)return;S.fc[fi]=1;save();flip=false;fc()};
+$("fNo").onclick=()=>{if(!deck().length)return;ORD.splice(ORD.indexOf(fi),1);ORD.splice(Math.min(2,ORD.length),0,fi);flip=false;fc()};
+who();ex();renderQ();fc();{const h=(location.hash||"#home").slice(1);show(TABS.some(t=>t[0]===h)?h:"home")}
+</script>
+</body>
+</html>
